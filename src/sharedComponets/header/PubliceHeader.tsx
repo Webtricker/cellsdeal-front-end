@@ -24,7 +24,7 @@ export default function PubliceHeader() {
                     </div>
                 </Container>
             </section>
-            <section className='w-full py-5'>
+            <section className='w-full py-6'>
                 <Container className='flex items-center justify-between gap-5'>
                     <SiteLogo />
                     <SearchFilter />
@@ -46,7 +46,7 @@ export default function PubliceHeader() {
                     </div>
                 </Container>
             </section>
-            <section className='w-full py-2 !bg-[var(--light-primary)] text-black'>
+            <section className='w-full sticky top-0 left-0 py-2 !bg-[var(--light-primary)] text-black'>
                 <Container className='flex items-center gap-5 justify-between'>
                     <div className="flex items-center gap-5 lg:gap-10">
                         <AllCategories />

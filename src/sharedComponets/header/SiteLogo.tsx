@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function SiteLogo() {
     return (
-        <div>
+        <div className='-mb-2.5'>
             <Image className='w-full max-w-[190px] h-auto' width={190} height={42} src="/images/shared/CellsDeal.png" alt="Site logo" />
         </div>
     )
