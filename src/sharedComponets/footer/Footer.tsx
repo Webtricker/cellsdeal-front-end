@@ -1,6 +1,8 @@
 import { FooterMenus } from '@/types/data';
 import Container from '../wrapper/Container';
 import FooterMenu from './FooterMenu';
+import logo from '@/assets/img/logo.png';
+import Image from 'next/image';
 
 export const footerLinks: FooterMenus[] = [
   {
@@ -59,6 +61,15 @@ function Footer() {
           {footerLinks?.map((menu, idx) => (
             <FooterMenu key={idx} menu={menu} />
           ))}
+        </section>
+        <section className='mt-11'>
+          <div>
+            <Image src={logo.src} alt='CellsDeal' width={200} height={100} />
+            <p>
+              Ac tincidunt vitae semper quis lectus tiamno quam lacus suspendisse fau cibus inte
+              dums uere lorem ipsume velit dignis
+            </p>
+          </div>
         </section>
       </Container>
     </footer>
