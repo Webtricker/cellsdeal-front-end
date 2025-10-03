@@ -956,8 +956,20 @@ p.bouncing-text {
   color: var(--clr-darkGold);
 }
 
-.cd_border-primary{
-  border: 1px solid var(--border);;
+.cd_border-primary {
+  border: 1px solid var(--border);
+}
+
+.cd_rounded {
+  border-radius: 8px;
+}
+
+.cd_rounded-sm {
+  border-radius: 5px;
+}
+
+.cd_divider {
+  background-color: var(--border);
 }
 /* 
 .cd_header-navlink:hover::before { {
