@@ -1,15 +1,17 @@
+import Footer from '@/sharedComponets/footer/Footer';
 import PubliceHeader from '@/sharedComponets/header/PubliceHeader';
-import React from 'react'
+import React from 'react';
 
 export default function layout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <>
-            <PubliceHeader />
-            {children}
-        </>
-    )
+  return (
+    <>
+      <PubliceHeader />
+      {children}
+      <Footer />
+    </>
+  );
 }
