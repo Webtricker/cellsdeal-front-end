@@ -1,30 +1,22 @@
 import React from 'react'
 import Container from '../wrapper/Container'
-import { Select, SelectContent, SelectGroup, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { SelectItem } from '@radix-ui/react-select'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select'
+import Link from 'next/link'
+import { UserRound } from 'lucide-react'
 
 export default function PubliceHeader() {
     return (
         <>
             <section className='w-full border-b cd_border-primary'>
-                <Container className='flex justify-between'>
-                    <p>Welcome to Wolmart store message or remove it!</p>
-                    <div className="grow flex justify-end items-center gap-3">
-                        <Select>
-                            <SelectTrigger className="w-[180px]">
-                                <SelectValue placeholder="Select a fruit" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectGroup>
-                                    <SelectLabel>Fruits</SelectLabel>
-                                    <SelectItem value="apple">Apple</SelectItem>
-                                    <SelectItem value="banana">Banana</SelectItem>
-                                    <SelectItem value="blueberry">Blueberry</SelectItem>
-                                    <SelectItem value="grapes">Grapes</SelectItem>
-                                    <SelectItem value="pineapple">Pineapple</SelectItem>
-                                </SelectGroup>
-                            </SelectContent>
-                        </Select>
+                <Container className='flex justify-between py-2'>
+                    <p className='cd_fs-xs'>Welcome to Wolmart store message or remove it!</p>
+                    <div className="grow flex justify-end items-center gap-7">
+                        {/* ===== top links starts ==== */}
+                        <Link className='cd_fs-xs' href="/blogs">Blog</Link>
+                        <Link className='cd_fs-xs' href="/contact-us">Contact Us</Link>
+                        <Link className='cd_fs-xs' href="/my-account">My Account</Link>
+                        <Link href="/my-account" className='cd_fs-xs flex items-center gap-1' ><UserRound className='w-4 h-4' /> Sign In / Register</Link>
+                        {/* ===== top links ends ==== */}
                     </div>
                 </Container>
             </section>
