@@ -41,9 +41,8 @@ export const footerLinks: FooterMenus[] = [
     ],
   },
   {
-    title: 'More',
+    title: 'Our Mission',
     links: [
-      { name: 'Our Mission', url: '/mission' },
       { name: 'Payment Methods', url: '/payment-methods' },
       { name: 'Money-back guarantee!', url: '/money-back' },
       { name: 'Products Returns', url: '/products-returns' },
@@ -56,7 +55,7 @@ function Footer() {
   return (
     <footer>
       <Container>
-        <section>
+        <section className='cd-border-primary flex items-start justify-between gap-2 border-b pb-11'>
           {footerLinks?.map((menu, idx) => (
             <FooterMenu key={idx} menu={menu} />
           ))}
