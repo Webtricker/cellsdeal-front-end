@@ -1,10 +1,12 @@
 import React from 'react'
 import Container from '../wrapper/Container'
 import Link from 'next/link'
-import { Heart, MessageCircleMore, PhoneCall, ShoppingCart, UserRound } from 'lucide-react'
+import { ClockFading, Heart, MapPin, MessageCircleMore, PhoneCall, ShoppingCart, UserRound } from 'lucide-react'
 import SiteLogo from './SiteLogo'
 import SearchFilter from './SearchFilter'
 import { VerticalDivider } from '../utils/Utils'
+import PublicNavlinks from './PublicNavlinks'
+import AllCategories from './AllCategories'
 
 export default function PubliceHeader() {
     return (
@@ -22,41 +24,47 @@ export default function PubliceHeader() {
                     </div>
                 </Container>
             </section>
-            <section className='w-full py-8'>
-                <Container className='flex justify-between gap-5'>
+            <section className='w-full py-5'>
+                <Container className='flex items-center justify-between gap-5'>
                     <SiteLogo />
                     <SearchFilter />
-                    <div className='flex justify-between gap-5'>
+                    <div className='flex items-center justify-between gap-5'>
                         <div className="flex items-center gap-2">
                             <PhoneCall className='w-5 h-5' />
-                            <div className='flex flex-col'>
-                                <span className='cd_fs-sm'><button className='cursor-pointer hover:text-blue-600'>Live Chat</button> or</span>
-                                <span className='cd_fs-xs'>01712377577</span>
-                            </div>
+                            <span className='cd_fs-xs'>01712377577</span>
                         </div>
-                        <VerticalDivider />
-                        <div className="flex items-center flex-col gap-0.5 justify-center">
+                        <VerticalDivider className='h-full' />
+                        <div className="">
                             <MessageCircleMore className='w-5 h-5' />
-                            <span className='cd_fs-xs'>Chat</span>
                         </div>
-                        <div className="flex items-center flex-col gap-0.5">
+                        <Link href="" className="flex items-center flex-col gap-0.5">
                             <Heart className='w-5 h-5' />
-                            <span className='cd_fs-xs'>Favourite</span>
-                        </div>
-                        <div className="flex items-center justify-center flex-col gap-0.5 ">
+                        </Link>
+                        <Link href="" >
                             <ShoppingCart className='w-5 h-5' />
-                            <span className='cd_fs-xs'>Cart</span>
-                        </div>
-
-
+                        </Link>
                     </div>
                 </Container>
             </section>
-             <section className='w-full py-8'>
-                {/* <Contaidner>
+            <section className='w-full py-2 !bg-[var(--light-primary)] text-black'>
+                <Container className='flex items-center gap-5 justify-between'>
+                    <div className="flex items-center gap-5 lg:gap-10">
+                        <AllCategories />
+                        <PublicNavlinks />
+                    </div>
 
-                </Contaidner> */}
-             </section>
+                    <div className="flex gap-5 lg:gap-7">
+                        <Link href="" className="flex items-center flex-nowrap gap-2" >
+                            <MapPin className='w-7 h-7 rounded-full p-1 bg-white text-black' />
+                            <span className='cd_fs-xs'>Track Order</span>
+                        </Link>
+                        <Link href="" className="flex items-center flex-nowrap gap-2" >
+                            <ClockFading className='w-7 h-7 rounded-full p-1 bg-white text-black' />
+                            <span className='cd_fs-xs'>Recently Viewed</span>
+                        </Link>
+                    </div>
+                </Container>
+            </section>
         </>
     )
 }
