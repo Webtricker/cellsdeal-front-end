@@ -4,7 +4,7 @@ import ReduxProvider from '@/provider/reduxProvider';
 import { ThemeProvider } from '@/provider/ThemeProvider';
 import { Button } from '@/components/ui/button';
 
-export const revalidate = 240;
+// export const revalidate = 240;
 
 const inter = Inter({
   subsets: ['latin'],
@@ -20,13 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`wt_fs-base z-0 ${inter.className} ${inter.variable} antialiased`}>
+      <body className={`cd_fs-base z-0 ${inter.className} ${inter.variable} antialiased`}>
         <ThemeProvider>
           <ReduxProvider>{children}</ReduxProvider>
         </ThemeProvider>
-        <div className='grid min-h-screen place-items-center'>
-          <Button size={'lg'}>Content Button</Button>
-        </div>
       </body>
     </html>
   );
