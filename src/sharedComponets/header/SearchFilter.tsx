@@ -7,7 +7,7 @@ export default function SearchFilter() {
     return (
         <div className='grow flex py-1.5 rounded-full items-center max-w-[600px] border'>
             <Select>
-                <SelectTrigger className="!px-2 !mx-1 !border-0 !focus:border-0 !shadow-none w-[180px]">
+                <SelectTrigger className="!px-2 !pl-3 !mx-1 !border-0 !focus:border-0 !shadow-none w-[180px]">
                     <SelectValue placeholder="Theme" />
                 </SelectTrigger>
                 <SelectContent>
@@ -19,7 +19,7 @@ export default function SearchFilter() {
             <VerticalDivider className='!h-full' />
             <div className="grow flex">
                 <input type="text" className='grow px-3 border-0 focus:border-0 focus:outline-0' placeholder='Search in...' />
-                <button className='mr-5 '>
+                <button className='mr-4 '>
                     <Search className='w-5 h-5 duration-300  hover:scale-105' />
                 </button>
             </div>
