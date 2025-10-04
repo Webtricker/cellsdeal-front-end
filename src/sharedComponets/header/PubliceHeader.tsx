@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../wrapper/Container'
 import Link from 'next/link'
-import { ClockFading, Heart, MapPin, Menu, MessageCircleMore, PhoneCall, ShoppingCart, UserRound } from 'lucide-react'
+import { ClockFading, Heart, MapPin, MessageCircleMore, PhoneCall, ShoppingCart, UserRound } from 'lucide-react'
 import SiteLogo from './SiteLogo'
 import SearchFilter from './SearchFilter'
 import { VerticalDivider } from '../utils/Utils'

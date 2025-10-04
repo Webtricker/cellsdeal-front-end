@@ -97,21 +97,21 @@ export default function PublicSidebar() {
     return (
         <Drawer direction="left" >
             <DrawerTrigger asChild>
-                <Menu className='w-5 h-5 lg:hidden' />
+                <Menu className='w-5 md:w-6 h-5 md:h-6 lg:hidden' />
             </DrawerTrigger>
             <DrawerContent>
-                <div className="w-full h-full bg-red-40 p-5">
+                <div className="w-full h-full p-5">
                     <div className="w-full flex items-center gap-5 mb-4">
                         <div className="grow flex border border-slate-300 cd_rounded-sm">
-                            <input type="text" className='grow cd_fs-sm px-3 focus:border-0 py-1.5 focus:outline-0' placeholder='Search in...' />
-                            <button className='mr-4 '>
+                            <input type="text" className='w-full cd_fs-sm px-3 focus:border-0 py-1.5 focus:outline-0' placeholder='Search in...' />
+                            <button className='mr-4'>
                                 <Search className='w-5 h-5 duration-300  hover:scale-105' />
                             </button>
                         </div>
 
-                        <div className="hidden sm:block">
+                        <div className="w-full max-w-6">
                             <DrawerClose>
-                                <X className="w-5 md:w-6 md:h-6 h-5" />
+                                <X className=" w-5 md:w-6 md:h-6 h-5" />
                             </DrawerClose>
                         </div>
                     </div>
