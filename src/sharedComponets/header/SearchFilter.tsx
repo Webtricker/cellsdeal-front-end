@@ -5,7 +5,7 @@ import { Search } from 'lucide-react'
 
 export default function SearchFilter() {
     return (
-        <div className='grow py-1 flex cd_rounded items-center max-w-[600px] h-9 border'>
+        <div className='grow py-1 hidden lg:flex cd_rounded items-center lg:max-w-[500px] xl:max-w-[600px] h-9 border'>
             <Select>
                 <SelectTrigger className="!px-2 !pl-3 !mx-1 !border-0 !focus:border-0 !shadow-none w-[180px]">
                     <SelectValue placeholder="All Categories" />
@@ -20,7 +20,7 @@ export default function SearchFilter() {
                 </SelectContent>
             </Select>
             <VerticalDivider className='!h-full' />
-            <div className="grow flex">
+            <div className="grow flex ">
                 <input type="text" className='grow cd_fs-sm px-3 focus:border-0 focus:outline-0' placeholder='Search in...' />
                 <button className='mr-4 '>
                     <Search className='w-5 h-5 duration-300  hover:scale-105' />

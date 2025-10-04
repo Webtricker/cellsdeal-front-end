@@ -7,6 +7,7 @@ import SearchFilter from './SearchFilter'
 import { VerticalDivider } from '../utils/Utils'
 import PublicNavlinks from './PublicNavlinks'
 import AllCategories from './AllCategories'
+import PublicSidebar from './PublicSidebar'
 
 export default function PubliceHeader() {
     return (
@@ -25,19 +26,20 @@ export default function PubliceHeader() {
                 </Container>
             </section>
             <section className='w-full py-6'>
-                <Container className='flex items-center justify-between gap-5'>
+                <Container className='flex items-center lg:justify-between gap-3 lg:gap-5'>
+                    <PublicSidebar />
                     <SiteLogo />
                     <SearchFilter />
-                    <div className='flex items-center justify-between gap-5'>
-                        <div className="flex items-center gap-2">
+                    <div className='grow lg:grow-0 flex items-center justify-end lg:justify-between gap-5'>
+                        <div className="hidden md:flex items-center gap-2">
                             <PhoneCall className='w-5 h-5' />
                             <span className='cd_fs-xs'>01712377577</span>
                         </div>
-                        <VerticalDivider className='h-full' />
-                        <div className="">
+                        <VerticalDivider className='h-full lg:block hidden' />
+                        <div className="md:block hidden">
                             <MessageCircleMore className='w-5 h-5' />
                         </div>
-                        <Link href="" className="flex items-center flex-col gap-0.5">
+                        <Link href="" className="md:block hidden">
                             <Heart className='w-5 h-5' />
                         </Link>
                         <Link href="" >
@@ -46,13 +48,12 @@ export default function PubliceHeader() {
                     </div>
                 </Container>
             </section>
-            <section className='w-full sticky top-0 left-0 py-2 !bg-[var(--light-primary)] text-black'>
+            <section className='hidden lg:block w-full sticky top-0 left-0 py-2 !bg-[var(--light-primary)] text-black'>
                 <Container className='flex items-center gap-5 justify-between'>
                     <div className="flex items-center gap-5 lg:gap-10">
                         <AllCategories />
                         <PublicNavlinks />
                     </div>
-
                     <div className="flex gap-5 lg:gap-7">
                         <Link href="" className="flex items-center flex-nowrap gap-2" >
                             <MapPin className='w-7 h-7 rounded-full p-1 bg-white text-black' />
