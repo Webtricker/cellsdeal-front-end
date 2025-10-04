@@ -8,7 +8,7 @@ export interface ITechnology {
   name: string;
 }
 
-// Footer menu types
+// Footer types
 export interface FooterLink {
   name: string;
   url: string;
@@ -17,4 +17,12 @@ export interface FooterLink {
 export interface FooterMenus {
   title: string;
   links: FooterLink[];
+}
+
+export interface ContactInfo {
+  title: string;
+  address?: string;
+  phone?: string;
+  hotline?: string;
+  email?: string;
 }

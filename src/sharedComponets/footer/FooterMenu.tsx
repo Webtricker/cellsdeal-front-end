@@ -7,7 +7,10 @@ function FooterMenu({ menu }: { menu: FooterMenus }) {
       <ul className='mt-3 flex flex-col gap-1'>
         {menu?.links?.map((link) => (
           <li key={link?.url}>
-            <a href={link?.url} className='hover:text-primary text-sm text-[#555555] duration-300'>
+            <a
+              href={link?.url}
+              className='hover:text-primary text-muted-foreground text-sm duration-300'
+            >
               {link?.name}
             </a>
           </li>

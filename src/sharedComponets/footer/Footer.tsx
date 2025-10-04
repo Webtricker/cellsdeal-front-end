@@ -1,8 +1,9 @@
-import { FooterMenus } from '@/types/data';
+import { ContactInfo, FooterMenus } from '@/types/data';
 import Container from '../wrapper/Container';
 import FooterMenu from './FooterMenu';
 import logo from '@/assets/img/logo.png';
 import Image from 'next/image';
+import FooterContact from './FooterContact';
 
 export const footerLinks: FooterMenus[] = [
   {
@@ -53,6 +54,22 @@ export const footerLinks: FooterMenus[] = [
     ],
   },
 ];
+
+export const contactInfo: ContactInfo[] = [
+  {
+    title: 'Service Center',
+    address: '02 Birch Coppice Business Park, Morson, Tamworth, B78 1SE',
+    phone: '0(800)123-456',
+    email: 'support@wolmart.com',
+  },
+  {
+    title: 'Shipping Center',
+    phone: '0(800)123-456',
+    hotline: '0(800)456-789',
+    email: 'contact@wolmart.com',
+  },
+];
+
 function Footer() {
   return (
     <footer>
@@ -65,10 +82,15 @@ function Footer() {
         <section className='mt-11'>
           <div>
             <Image src={logo.src} alt='CellsDeal' width={200} height={100} />
-            <p>
+            <p className='text-muted-foreground !text-sm'>
               Ac tincidunt vitae semper quis lectus tiamno quam lacus suspendisse fau cibus inte
               dums uere lorem ipsume velit dignis
             </p>
+          </div>
+          <div>
+            {contactInfo?.map((info, idx) => (
+              <FooterContact key={idx} info={info} />
+            ))}
           </div>
         </section>
       </Container>
