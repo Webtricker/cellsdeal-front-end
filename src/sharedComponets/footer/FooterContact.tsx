@@ -8,12 +8,18 @@ function FooterContact({ info }: { info: ContactInfo }) {
         <address className='text-muted-foreground text-sm not-italic'>{info.address}</address>
       )}
       {info.phone && (
-        <a href={`tel:${info?.phone}`} className='text-muted-foreground text-sm hover:underline'>
+        <a
+          href={`tel:${info?.phone}`}
+          className='text-muted-foreground block text-sm hover:underline'
+        >
           <span className='font-semibold'>Tel:</span> {info?.phone}
         </a>
       )}
       {info.hotline && (
-        <a href={`tel:${info?.hotline}`} className='text-muted-foreground text-sm hover:underline'>
+        <a
+          href={`tel:${info?.hotline}`}
+          className='text-muted-foreground block text-sm hover:underline'
+        >
           <span className='font-semibold'>Tel:</span> {info?.hotline}
         </a>
       )}

@@ -4,6 +4,7 @@ import FooterMenu from './FooterMenu';
 import logo from '@/assets/img/logo.png';
 import Image from 'next/image';
 import FooterContact from './FooterContact';
+import Newsletter from './Newsletter';
 
 export const footerLinks: FooterMenus[] = [
   {
@@ -79,19 +80,18 @@ function Footer() {
             <FooterMenu key={idx} menu={menu} />
           ))}
         </section>
-        <section className='mt-11'>
+        <section className='mt-11 grid grid-cols-4 gap-2'>
           <div>
             <Image src={logo.src} alt='CellsDeal' width={200} height={100} />
-            <p className='text-muted-foreground !text-sm'>
+            <p className='text-muted-foreground max-w-3xs text-justify !text-sm'>
               Ac tincidunt vitae semper quis lectus tiamno quam lacus suspendisse fau cibus inte
               dums uere lorem ipsume velit dignis
             </p>
           </div>
-          <div>
-            {contactInfo?.map((info, idx) => (
-              <FooterContact key={idx} info={info} />
-            ))}
-          </div>
+          {contactInfo?.map((info, idx) => (
+            <FooterContact key={idx} info={info} />
+          ))}
+          <Newsletter />
         </section>
       </Container>
     </footer>
