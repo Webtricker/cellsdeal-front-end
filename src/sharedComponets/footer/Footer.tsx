@@ -76,12 +76,12 @@ function Footer() {
   return (
     <footer>
       <Container>
-        <section className='cd-border-primary flex items-start justify-between gap-2 border-b pb-11'>
+        <section className='cd-border-primary flex flex-wrap items-start justify-between gap-2 border-b pb-11'>
           {footerLinks?.map((menu, idx) => (
             <FooterMenu key={idx} menu={menu} />
           ))}
         </section>
-        <section className='mt-11 grid grid-cols-4 gap-2'>
+        <section className='mt-11 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4'>
           <div>
             <Image src={logo.src} alt='CellsDeal' width={200} height={100} />
             <p className='text-muted-foreground max-w-3xs text-justify !text-sm'>

@@ -1,10 +1,11 @@
-import React from 'react'
-import Articles from './components/Articles'
+import Articles from './components/Articles';
+import SalesProducts from './components/SalesProducts';
 
 export default function PubliceHomePage() {
   return (
     <>
-    <Articles />
+      <SalesProducts />
+      <Articles />
     </>
-  )
+  );
 }
