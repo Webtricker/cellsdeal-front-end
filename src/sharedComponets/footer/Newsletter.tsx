@@ -36,7 +36,7 @@ function Newsletter() {
           <ChevronRight className='rounded-full text-white' />
         </Button>
       </div>
-      <div>
+      <div className='mt-4'>
         {
           <ul className='flex items-center gap-2'>
             {socialLinks.map((link, idx) => (

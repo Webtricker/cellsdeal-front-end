@@ -5,6 +5,7 @@ import logo from '@/assets/img/logo.png';
 import Image from 'next/image';
 import FooterContact from './FooterContact';
 import Newsletter from './Newsletter';
+import CopyRight from './CopyRight';
 
 export const footerLinks: FooterMenus[] = [
   {
@@ -94,6 +95,7 @@ function Footer() {
           <Newsletter />
         </section>
       </Container>
+      <CopyRight />
     </footer>
   );
 }
