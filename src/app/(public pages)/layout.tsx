@@ -10,6 +10,7 @@ export default function layout({
   return (
     <>
       <PubliceHeader />
+    <div className="w-full min-h-[300vh]"></div>
       {children}
       <Footer />
     </>
