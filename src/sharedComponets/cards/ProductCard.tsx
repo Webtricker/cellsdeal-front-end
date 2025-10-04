@@ -88,9 +88,12 @@ export function ProductCard({
         <div>
           {/* Product Name */}
           <h3
-            className={cn('text-foreground font-medium', isCompact ? 'text-sm' : 'mb-2 !text-base')}
+            className={cn(
+              'text-foreground font-medium',
+              isCompact ? '!text-sm' : 'mb-2 !text-base'
+            )}
           >
-            {product.name}
+            {product.name.slice(0, isCompact ? 13 : 50)}...
           </h3>
 
           {/* Rating and Stock (Default variant only) */}
@@ -127,8 +130,8 @@ export function ProductCard({
           )}
 
           {/* Price */}
-          <div className={cn('font-semibold', isCompact ? 'text-sm' : 'mb-4 text-base')}>
-            ${product.priceMin.toFixed(2)} – ${product.priceMax.toFixed(2)}
+          <div className={cn('font-semibold', isCompact ? '!text-xs' : 'mb-4 !text-base')}>
+            ${product.priceMin} – ${product.priceMax}
           </div>
 
           {/* Select Options Button (Default variant only) */}

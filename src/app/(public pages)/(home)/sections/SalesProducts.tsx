@@ -7,7 +7,7 @@ import Container from '@/sharedComponets/wrapper/Container';
 
 function SalesProducts() {
   return (
-    <Container>
+    <Container className='py-8'>
       <ProductSliderSection title='Sale Products' data={laptopsData} slidesPerView={5} rows={1}>
         {(product) => (
           <ProductCard
