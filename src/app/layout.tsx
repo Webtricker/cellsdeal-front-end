@@ -2,8 +2,6 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import ReduxProvider from '@/provider/reduxProvider';
 import { ThemeProvider } from '@/provider/ThemeProvider';
-import { Button } from '@/components/ui/button';
-
 // export const revalidate = 240;
 
 const inter = Inter({
@@ -20,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`cd_fs-base z-0 ${inter.className} ${inter.variable} antialiased`}>
+      <body className={`cd_fs-sm z-0 ${inter.className} ${inter.variable} antialiased`}>
         <ThemeProvider>
           <ReduxProvider>{children}</ReduxProvider>
         </ThemeProvider>
