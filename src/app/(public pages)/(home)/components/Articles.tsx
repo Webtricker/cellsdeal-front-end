@@ -1,6 +1,6 @@
 import Container from '@/sharedComponets/wrapper/Container'
 import React from 'react'
-import { ArticleCard } from './ArticleCard'
+import { ArticleCard } from '../components/ArticleCard'
 
 export default function Articles() {
     return (
