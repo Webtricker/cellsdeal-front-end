@@ -1,6 +1,11 @@
-import { FooterMenus } from '@/types/data';
+import { ContactInfo, FooterMenus } from '@/types/data';
 import Container from '../wrapper/Container';
 import FooterMenu from './FooterMenu';
+import logo from '@/assets/img/logo.png';
+import Image from 'next/image';
+import FooterContact from './FooterContact';
+import Newsletter from './Newsletter';
+import CopyRight from './CopyRight';
 
 export const footerLinks: FooterMenus[] = [
   {
@@ -41,9 +46,8 @@ export const footerLinks: FooterMenus[] = [
     ],
   },
   {
-    title: 'More',
+    title: 'Our Mission',
     links: [
-      { name: 'Our Mission', url: '/mission' },
       { name: 'Payment Methods', url: '/payment-methods' },
       { name: 'Money-back guarantee!', url: '/money-back' },
       { name: 'Products Returns', url: '/products-returns' },
@@ -52,16 +56,46 @@ export const footerLinks: FooterMenus[] = [
     ],
   },
 ];
+
+export const contactInfo: ContactInfo[] = [
+  {
+    title: 'Service Center',
+    address: '02 Birch Coppice Business Park, Morson, Tamworth, B78 1SE',
+    phone: '0(800)123-456',
+    email: 'support@wolmart.com',
+  },
+  {
+    title: 'Shipping Center',
+    phone: '0(800)123-456',
+    hotline: '0(800)456-789',
+    email: 'contact@wolmart.com',
+  },
+];
+
 function Footer() {
   return (
     <footer>
       <Container>
-        <section>
+        <section className='cd-border-primary flex flex-wrap items-start justify-between gap-2 border-b pb-11'>
           {footerLinks?.map((menu, idx) => (
             <FooterMenu key={idx} menu={menu} />
           ))}
         </section>
+        <section className='mt-11 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4'>
+          <div>
+            <Image src={logo.src} alt='CellsDeal' width={200} height={100} />
+            <p className='text-muted-foreground max-w-3xs text-justify !text-sm'>
+              Ac tincidunt vitae semper quis lectus tiamno quam lacus suspendisse fau cibus inte
+              dums uere lorem ipsume velit dignis
+            </p>
+          </div>
+          {contactInfo?.map((info, idx) => (
+            <FooterContact key={idx} info={info} />
+          ))}
+          <Newsletter />
+        </section>
       </Container>
+      <CopyRight />
     </footer>
   );
 }
