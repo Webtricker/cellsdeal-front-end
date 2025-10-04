@@ -344,32 +344,32 @@ h1 {
 }
 
 h2 {
-  font-size: var(--fs-7xl);
+  font-size: var(--fs-xl);
   line-height: 120%;
 }
 
 h3 {
-  font-size: var(--fs-5xl);
+  font-size: var(--fs-xl);
   line-height: 120%;
 }
 
 h4 {
-  font-size: var(--fs-4xl);
+  font-size: var(--fs-lg);
   line-height: 120%;
 }
 
 h5 {
-  font-size: var(--fs-2xl);
-  line-height: 120%;
-}
-
-h6 {
   font-size: var(--fs-md);
   line-height: 120%;
 }
 
-p {
+h6 {
   font-size: var(--fs-base);
+  line-height: 120%;
+}
+
+p {
+  font-size: var(--fs-sm);
   line-height: 150%;
 }
 
@@ -386,23 +386,21 @@ button {
 .btn-reverse-bg {
   @apply bg-slate-800 text-white duration-300 hover:bg-black dark:bg-slate-200 dark:text-black dark:hover:bg-white;
 }
-section {
-  background-color: var(--clr-bg-body);
-}
-
-.section-inner-speacing {
-  @apply pt-10 xl:pt-12 2xl:pt-14;
-}
 
 .section-speacing {
   @apply py-10 xl:py-12 2xl:py-14;
 }
 
+.section-top-speacing {
+  @apply pt-10 xl:pt-12 2xl:pt-14;
+}
+
 .section-bottom-speacing {
   @apply pb-10 xl:pb-12 2xl:pb-14;
 }
-.dark section {
-  background-color: var(--clr-bg-body-dark);
+
+.section-heading {
+  @apply pb-2.5 md:pb-3 lg:pb-3.5 xl:pb-4
 }
 
 .heading,
