@@ -25,17 +25,48 @@ export function ProductSliderSection({
   rows = 1,
   className,
 }: ProductSliderSectionProps) {
+  const [responsiveSlidesPerView, setResponsiveSlidesPerView] = useState(slidesPerView);
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: 'center',
+    align: 'start',
     slidesToScroll: 1,
-    duration: 100,
+    skipSnaps: false,
     loop: true,
-    skipSnaps: true,
-    containScroll: 'trimSnaps',
+    duration: 25,
   });
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width < 640) {
+        // Mobile: 1-2 slides
+        setResponsiveSlidesPerView(Math.min(slidesPerView, 2));
+      } else if (width < 768) {
+        // Small tablet: 2-3 slides
+        setResponsiveSlidesPerView(Math.min(slidesPerView, 3));
+      } else if (width < 1024) {
+        // Tablet: 3-4 slides
+        setResponsiveSlidesPerView(Math.min(slidesPerView, 4));
+      } else {
+        // Desktop: use configured slidesPerView
+        setResponsiveSlidesPerView(slidesPerView);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [slidesPerView]);
+
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.reInit();
+    }
+  }, [emblaApi, responsiveSlidesPerView]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -58,18 +89,20 @@ export function ProductSliderSection({
     emblaApi.on('reInit', onSelect);
   }, [emblaApi, onSelect]);
 
-  const slides: any[][] = [];
-  const itemsPerSlide = slidesPerView * rows;
+  const itemsPerSlide = rows;
 
+  const slides: any[][] = [];
   for (let i = 0; i < data.length; i += itemsPerSlide) {
     slides.push(data.slice(i, i + itemsPerSlide));
   }
 
   return (
     <section className={cn('w-full', className)}>
+      {/* Header with Title and Navigation */}
       <div className='mb-6 flex items-center justify-between'>
         <h2>{title}</h2>
 
+        {/* Navigation Controls */}
         <div className='flex gap-2'>
           <Button
             variant='ghost'
@@ -96,25 +129,20 @@ export function ProductSliderSection({
 
       {/* Carousel Container */}
       <div className='overflow-hidden' ref={emblaRef}>
-        <div className='flex'>
+        <div className='flex gap-4'>
           {slides.map((slideItems, slideIndex) => (
-            <div key={slideIndex} className='min-w-0 flex-[0_0_100%]'>
+            <div
+              key={slideIndex}
+              className='min-w-0 flex-[0_0_auto]'
+              style={{
+                width: `calc((100% - ${(responsiveSlidesPerView - 1) * 16}px) / ${responsiveSlidesPerView})`,
+              }}
+            >
               <div className={cn('grid gap-4', rows === 2 ? 'grid-rows-2' : 'grid-rows-1')}>
-                {Array.from({ length: rows }).map((_, rowIndex) => (
-                  <div
-                    key={rowIndex}
-                    className='grid gap-4'
-                    style={{ gridTemplateColumns: `repeat(${slidesPerView}, 1fr)` }}
-                  >
-                    {slideItems
-                      .slice(rowIndex * slidesPerView, (rowIndex + 1) * slidesPerView)
-                      .map((item, itemIndex) => {
-                        const originalIndex =
-                          slideIndex * itemsPerSlide + rowIndex * slidesPerView + itemIndex;
-                        return <div key={originalIndex}>{children(item, originalIndex)}</div>;
-                      })}
-                  </div>
-                ))}
+                {slideItems.map((item, itemIndex) => {
+                  const originalIndex = slideIndex * itemsPerSlide + itemIndex;
+                  return <div key={originalIndex}>{children(item, originalIndex)}</div>;
+                })}
               </div>
             </div>
           ))}

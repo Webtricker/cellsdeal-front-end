@@ -1,20 +1,23 @@
-// import JustForYou from './components/JustForYou';
-// import MultipleInterests from './components/MultipleInterests';
-// import SalesProducts from './components/SalesProducts';
-import React from 'react'
+import JustForYou from './components/JustForYou';
+import MultipleInterests from './components/MultipleInterests';
+import SalesProducts from './components/SalesProducts';
+import React from 'react';
 import TopWeeklyVendors from './components/TopWeeklyVendors';
 import Articles from './components/Articles';
 import HomeBanner from './components/HomeBanner';
-import MultipleInterests from './components/MultipleInterests';
+import Brands from './components/Brands';
+import ProductAdvertise from './components/ProductAdvertise';
 
-export default function PubliceHomePage() {
+export default function PublicHomePage() {
   return (
     <>
       <HomeBanner />
-      <TopWeeklyVendors />
       <MultipleInterests />
-      {/* <JustForYou /> */}
-      {/* <SalesProducts /> */}
+      <ProductAdvertise />
+      <JustForYou />
+      <SalesProducts />
+      <TopWeeklyVendors />
+      <Brands />
       <Articles />
     </>
   );

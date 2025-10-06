@@ -1,3 +1,19 @@
+import brand1 from '@/assets/img/brands/brand01.png';
+import brand2 from '@/assets/img/brands/brand02.png';
+import brand3 from '@/assets/img/brands/brand03.png';
+import brand4 from '@/assets/img/brands/brand04.png';
+import brand5 from '@/assets/img/brands/brand05.png';
+import brand6 from '@/assets/img/brands/brand06.png';
+import brand8 from '@/assets/img/brands/brand08.png';
+import brand9 from '@/assets/img/brands/brand09.png';
+import img1 from '@/assets/img/demo-products/dslr-camera-black.jpg';
+import img2 from '@/assets/img/demo-products/wireless-mouse.png';
+import img3 from '@/assets/img/demo-products/usb-c-hub-adapter.jpg';
+import img4 from '@/assets/img/demo-products/macbook-pro-laptop.png';
+import img5 from '@/assets/img/demo-products/lenovo-laptop-silver.jpg';
+
+export const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand8, brand9];
+
 export interface Product {
   id: number;
   name: string;
@@ -14,7 +30,7 @@ export const laptopsData: Product[] = [
   {
     id: 1,
     name: 'Lenovo Idea Pad',
-    image: '/lenovo-laptop-silver.jpg',
+    image: img5.src,
     priceMin: 140,
     priceMax: 160,
     rating: 5,
@@ -25,7 +41,7 @@ export const laptopsData: Product[] = [
   {
     id: 2,
     name: 'MacBook Pro 16',
-    image: '/macbook-pro-laptop.png',
+    image: img4.src,
     priceMin: 2399,
     priceMax: 2899,
     rating: 4,
@@ -35,7 +51,7 @@ export const laptopsData: Product[] = [
   {
     id: 3,
     name: 'Dell XPS 15',
-    image: '/lenovo-laptop-silver.jpg',
+    image: img5.src,
     priceMin: 1299,
     priceMax: 1799,
     rating: 5,
@@ -46,7 +62,7 @@ export const laptopsData: Product[] = [
   {
     id: 4,
     name: 'HP Pavilion',
-    image: '/macbook-pro-laptop.png',
+    image: img4.src,
     priceMin: 699,
     priceMax: 899,
     rating: 4,
@@ -56,7 +72,7 @@ export const laptopsData: Product[] = [
   {
     id: 5,
     name: 'ASUS ROG Strix',
-    image: '/lenovo-laptop-silver.jpg',
+    image: img5.src,
     priceMin: 1599,
     priceMax: 2199,
     rating: 5,
@@ -67,7 +83,7 @@ export const laptopsData: Product[] = [
   {
     id: 6,
     name: 'Acer Aspire',
-    image: '/macbook-pro-laptop.png',
+    image: img4.src,
     priceMin: 549,
     priceMax: 749,
     rating: 3,
@@ -78,7 +94,7 @@ export const laptopsData: Product[] = [
   {
     id: 7,
     name: 'Microsoft Surface Laptop',
-    image: '/lenovo-laptop-silver.jpg',
+    image: img5.src,
     priceMin: 999,
     priceMax: 1499,
     rating: 4,
@@ -88,7 +104,7 @@ export const laptopsData: Product[] = [
   {
     id: 8,
     name: 'Razer Blade 15',
-    image: '/macbook-pro-laptop.png',
+    image: img4.src,
     priceMin: 1799,
     priceMax: 2499,
     rating: 5,
@@ -99,7 +115,7 @@ export const laptopsData: Product[] = [
   {
     id: 9,
     name: 'Lenovo ThinkPad X1',
-    image: '/lenovo-laptop-silver.jpg',
+    image: img5.src,
     priceMin: 1399,
     priceMax: 1899,
     rating: 5,
@@ -109,7 +125,7 @@ export const laptopsData: Product[] = [
   {
     id: 10,
     name: 'MSI Prestige 14',
-    image: '/macbook-pro-laptop.png',
+    image: img4.src,
     priceMin: 1099,
     priceMax: 1399,
     rating: 4,
@@ -120,7 +136,7 @@ export const laptopsData: Product[] = [
   {
     id: 11,
     name: 'Samsung Galaxy Book',
-    image: '/lenovo-laptop-silver.jpg',
+    image: img5.src,
     priceMin: 849,
     priceMax: 1149,
     rating: 4,
@@ -130,7 +146,7 @@ export const laptopsData: Product[] = [
   {
     id: 12,
     name: 'LG Gram 17',
-    image: '/macbook-pro-laptop.png',
+    image: img4.src,
     priceMin: 1599,
     priceMax: 1899,
     rating: 5,
@@ -144,7 +160,7 @@ export const accessoriesData: Product[] = [
   {
     id: 13,
     name: '8K Camera',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 25,
     priceMax: 29,
     rating: 4,
@@ -155,7 +171,7 @@ export const accessoriesData: Product[] = [
   {
     id: 14,
     name: 'Wireless Mouse',
-    image: '/wireless-mouse.png',
+    image: img2.src,
     priceMin: 15,
     priceMax: 25,
     rating: 5,
@@ -165,7 +181,7 @@ export const accessoriesData: Product[] = [
   {
     id: 15,
     name: 'USB-C Hub',
-    image: '/usb-c-hub-adapter.jpg',
+    image: img3.src,
     priceMin: 35,
     priceMax: 45,
     rating: 4,
@@ -176,7 +192,7 @@ export const accessoriesData: Product[] = [
   {
     id: 16,
     name: 'Mechanical Keyboard',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 89,
     priceMax: 149,
     rating: 5,
@@ -186,7 +202,7 @@ export const accessoriesData: Product[] = [
   {
     id: 17,
     name: 'Webcam HD',
-    image: '/wireless-mouse.png',
+    image: img2.src,
     priceMin: 45,
     priceMax: 79,
     rating: 4,
@@ -197,7 +213,7 @@ export const accessoriesData: Product[] = [
   {
     id: 18,
     name: 'Headset Pro',
-    image: '/usb-c-hub-adapter.jpg',
+    image: img3.src,
     priceMin: 99,
     priceMax: 159,
     rating: 5,
@@ -207,7 +223,7 @@ export const accessoriesData: Product[] = [
   {
     id: 19,
     name: 'Monitor Stand',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 29,
     priceMax: 49,
     rating: 4,
@@ -218,7 +234,7 @@ export const accessoriesData: Product[] = [
   {
     id: 20,
     name: 'Laptop Sleeve',
-    image: '/wireless-mouse.png',
+    image: img2.src,
     priceMin: 19,
     priceMax: 35,
     rating: 3,
@@ -228,7 +244,7 @@ export const accessoriesData: Product[] = [
   {
     id: 21,
     name: 'External SSD 1TB',
-    image: '/usb-c-hub-adapter.jpg',
+    image: img3.src,
     priceMin: 119,
     priceMax: 179,
     rating: 5,
@@ -239,7 +255,7 @@ export const accessoriesData: Product[] = [
   {
     id: 22,
     name: 'Wireless Charger',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 29,
     priceMax: 49,
     rating: 4,
@@ -249,7 +265,7 @@ export const accessoriesData: Product[] = [
   {
     id: 23,
     name: 'Cable Organizer',
-    image: '/wireless-mouse.png',
+    image: img2.src,
     priceMin: 12,
     priceMax: 18,
     rating: 5,
@@ -260,7 +276,7 @@ export const accessoriesData: Product[] = [
   {
     id: 24,
     name: 'Desk Lamp LED',
-    image: '/usb-c-hub-adapter.jpg',
+    image: img3.src,
     priceMin: 39,
     priceMax: 69,
     rating: 4,
@@ -270,7 +286,7 @@ export const accessoriesData: Product[] = [
   {
     id: 25,
     name: 'Phone Stand',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 15,
     priceMax: 25,
     rating: 4,
@@ -281,7 +297,7 @@ export const accessoriesData: Product[] = [
   {
     id: 26,
     name: 'Bluetooth Speaker',
-    image: '/wireless-mouse.png',
+    image: img2.src,
     priceMin: 49,
     priceMax: 89,
     rating: 5,
@@ -291,7 +307,7 @@ export const accessoriesData: Product[] = [
   {
     id: 27,
     name: 'Screen Protector',
-    image: '/usb-c-hub-adapter.jpg',
+    image: img1.src,
     priceMin: 9,
     priceMax: 19,
     rating: 3,
@@ -302,7 +318,7 @@ export const accessoriesData: Product[] = [
   {
     id: 28,
     name: 'Laptop Cooling Pad',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 25,
     priceMax: 45,
     rating: 4,
@@ -315,7 +331,7 @@ export const camerasData: Product[] = [
   {
     id: 29,
     name: 'Canon EOS R5',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 3899,
     priceMax: 4299,
     rating: 5,
@@ -326,7 +342,7 @@ export const camerasData: Product[] = [
   {
     id: 30,
     name: 'Sony A7 IV',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 2499,
     priceMax: 2799,
     rating: 5,
@@ -336,7 +352,7 @@ export const camerasData: Product[] = [
   {
     id: 31,
     name: 'Nikon Z6 II',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 1999,
     priceMax: 2299,
     rating: 4,
@@ -347,7 +363,7 @@ export const camerasData: Product[] = [
   {
     id: 32,
     name: 'Fujifilm X-T4',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 1699,
     priceMax: 1899,
     rating: 5,
@@ -357,7 +373,7 @@ export const camerasData: Product[] = [
   {
     id: 33,
     name: 'Panasonic Lumix GH5',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 1399,
     priceMax: 1699,
     rating: 4,
@@ -368,7 +384,7 @@ export const camerasData: Product[] = [
   {
     id: 34,
     name: 'Canon EOS R6',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 2499,
     priceMax: 2799,
     rating: 5,
@@ -378,7 +394,7 @@ export const camerasData: Product[] = [
   {
     id: 35,
     name: 'Sony A7R V',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 3899,
     priceMax: 4199,
     rating: 5,
@@ -389,7 +405,7 @@ export const camerasData: Product[] = [
   {
     id: 36,
     name: 'Nikon Z9',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 5499,
     priceMax: 5999,
     rating: 5,
@@ -399,7 +415,7 @@ export const camerasData: Product[] = [
   {
     id: 37,
     name: 'Olympus OM-1',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 2199,
     priceMax: 2499,
     rating: 4,
@@ -410,7 +426,7 @@ export const camerasData: Product[] = [
   {
     id: 38,
     name: 'Leica Q2',
-    image: '/dslr-camera-black.jpg',
+    image: img1.src,
     priceMin: 4995,
     priceMax: 5495,
     rating: 5,

@@ -74,7 +74,7 @@ export const contactInfo: ContactInfo[] = [
 
 function Footer() {
   return (
-    <footer>
+    <footer className='pt-16'>
       <Container>
         <section className='cd-border-primary flex flex-wrap items-start justify-between gap-2 border-b pb-11'>
           {footerLinks?.map((menu, idx) => (
