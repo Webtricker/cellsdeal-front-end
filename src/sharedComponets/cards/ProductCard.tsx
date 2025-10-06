@@ -47,7 +47,7 @@ export function ProductCard({
         {/* Image Container */}
         <div className={cn('bg-muted relative', isCompact ? 'h-[120px]' : 'h-[240px]')}>
           <Image
-            src={product.image || '/placeholder.svg'}
+            src={product.image || '/src/assets/img/demo-products/placeholder.svg'}
             alt={product.name}
             fill
             className='object-contain'
