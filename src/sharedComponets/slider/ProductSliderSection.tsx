@@ -99,7 +99,7 @@ export function ProductSliderSection({
   return (
     <section className={cn('w-full', className)}>
       {/* Header with Title and Navigation */}
-      <div className='mb-6 flex items-center justify-between'>
+      <div className='section-heading flex items-center justify-between'>
         <h2>{title}</h2>
 
         {/* Navigation Controls */}

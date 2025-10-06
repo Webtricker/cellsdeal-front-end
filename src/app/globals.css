@@ -392,15 +392,15 @@ button {
 }
 
 .section-speacing {
-  @apply py-10 xl:py-12 2xl:py-14;
+  @apply py-12 lg:py-14 xl:py-16 2xl:py-[74px];
 }
 
 .section-top-speacing {
-  @apply pt-10 xl:pt-12 2xl:pt-14;
+  @apply pt-12 lg:pt-14 xl:pt-16 2xl:pt-[74px];
 }
 
 .section-bottom-speacing {
-  @apply pb-10 xl:pb-12 2xl:pb-14;
+  @apply pb-12 lg:pb-14 xl:pb-16 2xl:pb-[74px];;
 }
 
 .section-heading {

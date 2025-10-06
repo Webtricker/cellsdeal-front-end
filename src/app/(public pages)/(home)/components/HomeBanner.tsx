@@ -68,7 +68,7 @@ const HotDeals = () => {
 
 export default function HomeBanner() {
     return (
-        <section className='w-full mt-5'>
+        <section className='w-full mt-5 section-bottom-speacing'>
             <Container className='flex flex-col md:flex-row gap-5 justify-between overflow-hidden'>
                 <Banner />
                 <HotDeals />
