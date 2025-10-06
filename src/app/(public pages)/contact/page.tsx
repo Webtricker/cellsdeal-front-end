@@ -4,7 +4,7 @@ import ContactForm from './components/ContactForm';
 import Faq from './components/Faq';
 import Container from '@/sharedComponets/wrapper/Container';
 
-export default function Page() {
+export default function ContactPage() {
   return (
     <>
       <Container className='my-8 grid grid-cols-1 gap-8 md:mb-24 lg:my-16 lg:grid-cols-2 lg:gap-12'>
