@@ -25,16 +25,48 @@ export function ProductSliderSection({
   rows = 1,
   className,
 }: ProductSliderSectionProps) {
+  const [responsiveSlidesPerView, setResponsiveSlidesPerView] = useState(slidesPerView);
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'start',
     slidesToScroll: 1,
     skipSnaps: false,
     loop: true,
-    duration: 50,
+    duration: 25,
   });
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width < 640) {
+        // Mobile: 1-2 slides
+        setResponsiveSlidesPerView(Math.min(slidesPerView, 2));
+      } else if (width < 768) {
+        // Small tablet: 2-3 slides
+        setResponsiveSlidesPerView(Math.min(slidesPerView, 3));
+      } else if (width < 1024) {
+        // Tablet: 3-4 slides
+        setResponsiveSlidesPerView(Math.min(slidesPerView, 4));
+      } else {
+        // Desktop: use configured slidesPerView
+        setResponsiveSlidesPerView(slidesPerView);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [slidesPerView]);
+
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.reInit();
+    }
+  }, [emblaApi, responsiveSlidesPerView]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -102,7 +134,9 @@ export function ProductSliderSection({
             <div
               key={slideIndex}
               className='min-w-0 flex-[0_0_auto]'
-              style={{ width: `calc((100% - ${(slidesPerView - 1) * 16}px) / ${slidesPerView})` }}
+              style={{
+                width: `calc((100% - ${(responsiveSlidesPerView - 1) * 16}px) / ${responsiveSlidesPerView})`,
+              }}
             >
               <div className={cn('grid gap-4', rows === 2 ? 'grid-rows-2' : 'grid-rows-1')}>
                 {slideItems.map((item, itemIndex) => {
