@@ -7,7 +7,7 @@ import Container from '@/sharedComponets/wrapper/Container';
 
 function MultipleInterests() {
   return (
-    <Container className='grid grid-cols-3 gap-4 py-8'>
+    <Container className='grid grid-cols-1 gap-4 py-8 md:grid-cols-2 lg:grid-cols-3'>
       <ProductSliderSection
         className='cd_rounded-sm bg-white px-2 py-1 shadow'
         title='Popular Departments'
