@@ -10,7 +10,7 @@ export default function PublicNavlinks() {
       <Link className='cd_fs-xs' href='/shop'>
         Shop
       </Link>
-      <Link className='cd_fs-xs' href='/blogs'>
+      <Link className='cd_fs-xs' href='/blog'>
         Blogs
       </Link>
       <Link className='cd_fs-xs' href='/vendor'>

@@ -129,7 +129,7 @@ export function ProductSliderSection({
 
       {/* Carousel Container */}
       <div className='overflow-hidden' ref={emblaRef}>
-        <div className='flex gap-4'>
+        <div className='flex gap-[14px]'>
           {slides.map((slideItems, slideIndex) => (
             <div
               key={slideIndex}
