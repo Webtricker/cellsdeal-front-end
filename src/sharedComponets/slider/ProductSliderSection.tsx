@@ -26,12 +26,11 @@ export function ProductSliderSection({
   className,
 }: ProductSliderSectionProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: 'center',
+    align: 'start',
     slidesToScroll: 1,
-    duration: 100,
+    skipSnaps: false,
     loop: true,
-    skipSnaps: true,
-    containScroll: 'trimSnaps',
+    duration: 50,
   });
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -58,18 +57,20 @@ export function ProductSliderSection({
     emblaApi.on('reInit', onSelect);
   }, [emblaApi, onSelect]);
 
-  const slides: any[][] = [];
-  const itemsPerSlide = slidesPerView * rows;
+  const itemsPerSlide = rows;
 
+  const slides: any[][] = [];
   for (let i = 0; i < data.length; i += itemsPerSlide) {
     slides.push(data.slice(i, i + itemsPerSlide));
   }
 
   return (
     <section className={cn('w-full', className)}>
+      {/* Header with Title and Navigation */}
       <div className='mb-6 flex items-center justify-between'>
         <h2>{title}</h2>
 
+        {/* Navigation Controls */}
         <div className='flex gap-2'>
           <Button
             variant='ghost'
@@ -96,25 +97,18 @@ export function ProductSliderSection({
 
       {/* Carousel Container */}
       <div className='overflow-hidden' ref={emblaRef}>
-        <div className='flex'>
+        <div className='flex gap-4'>
           {slides.map((slideItems, slideIndex) => (
-            <div key={slideIndex} className='min-w-0 flex-[0_0_100%]'>
+            <div
+              key={slideIndex}
+              className='min-w-0 flex-[0_0_auto]'
+              style={{ width: `calc((100% - ${(slidesPerView - 1) * 16}px) / ${slidesPerView})` }}
+            >
               <div className={cn('grid gap-4', rows === 2 ? 'grid-rows-2' : 'grid-rows-1')}>
-                {Array.from({ length: rows }).map((_, rowIndex) => (
-                  <div
-                    key={rowIndex}
-                    className='grid gap-4'
-                    style={{ gridTemplateColumns: `repeat(${slidesPerView}, 1fr)` }}
-                  >
-                    {slideItems
-                      .slice(rowIndex * slidesPerView, (rowIndex + 1) * slidesPerView)
-                      .map((item, itemIndex) => {
-                        const originalIndex =
-                          slideIndex * itemsPerSlide + rowIndex * slidesPerView + itemIndex;
-                        return <div key={originalIndex}>{children(item, originalIndex)}</div>;
-                      })}
-                  </div>
-                ))}
+                {slideItems.map((item, itemIndex) => {
+                  const originalIndex = slideIndex * itemsPerSlide + itemIndex;
+                  return <div key={originalIndex}>{children(item, originalIndex)}</div>;
+                })}
               </div>
             </div>
           ))}

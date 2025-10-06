@@ -1,7 +1,7 @@
 'use client';
 import { accessoriesData } from '@/lib/demo-data';
 import { ProductCard } from '@/sharedComponets/cards/ProductCard';
-import { ProductSliderSection } from '@/sharedComponets/DOM/ProductSliderSection';
+import { ProductSliderSection } from '@/sharedComponets/slider/ProductSliderSection';
 import Container from '@/sharedComponets/wrapper/Container';
 
 function JustForYou() {
