@@ -1025,15 +1025,15 @@ p.bouncing-text {
 
 .home-banner-swiper .swiper-button-prev,
 .home-banner-swiper .swiper-button-next {
-  @apply absolute top-[50%] z-9999 text-white;
+  @apply absolute top-[50%] z-9999 p-2 text-white;
 }
 
 .home-banner-swiper .swiper-button-next {
-  @apply right-5;
+  @apply right-0 md:right-5;
 }
 
 .home-banner-swiper .swiper-button-prev {
-  @apply left-5 rotate-180;
+  @apply left-0 rotate-180 md:left-5;
 }
 
 .home-banner-swiper .swiper-button-disabled {
