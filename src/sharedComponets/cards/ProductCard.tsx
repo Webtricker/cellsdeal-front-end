@@ -37,8 +37,10 @@ export function ProductCard({
   return (
     <Card
       className={cn(
-        'group border-border bg-card relative overflow-hidden p-2 transition-shadow hover:shadow-lg',
-        isCompact ? '!cd_rounded-sm max-w-[140px]' : 'max-w-[280px]'
+        'group relative overflow-hidden p-2',
+        isCompact
+          ? '!cd_rounded-sm max-w-[140px] border-transparent shadow-none'
+          : 'border-border max-w-[280px] transition-shadow hover:shadow-lg'
       )}
     >
       <CardContent className='!p-0'>

@@ -9,6 +9,7 @@ function MultipleInterests() {
   return (
     <Container className='grid grid-cols-3 gap-4 py-8'>
       <ProductSliderSection
+        className='cd_rounded-sm bg-white px-2 py-1 shadow'
         title='Popular Departments'
         data={laptopsData}
         slidesPerView={3}
@@ -24,7 +25,13 @@ function MultipleInterests() {
           />
         )}
       </ProductSliderSection>
-      <ProductSliderSection title='New Arrivals' data={camerasData} slidesPerView={3} rows={1}>
+      <ProductSliderSection
+        title='New Arrivals'
+        data={camerasData}
+        slidesPerView={3}
+        rows={1}
+        className='cd_rounded-sm bg-white px-2 py-1 shadow'
+      >
         {(product) => (
           <ProductCard
             variant='compact'
@@ -35,7 +42,13 @@ function MultipleInterests() {
           />
         )}
       </ProductSliderSection>
-      <ProductSliderSection title='Top Rankings' data={laptopsData} slidesPerView={3} rows={1}>
+      <ProductSliderSection
+        title='Top Rankings'
+        data={laptopsData}
+        slidesPerView={3}
+        rows={1}
+        className='cd_rounded-sm bg-white px-2 py-1 shadow'
+      >
         {(product) => (
           <ProductCard
             variant='compact'
@@ -46,7 +59,13 @@ function MultipleInterests() {
           />
         )}
       </ProductSliderSection>
-      <ProductSliderSection title='Best Sellers' data={laptopsData} slidesPerView={3} rows={1}>
+      <ProductSliderSection
+        title='Best Sellers'
+        data={laptopsData}
+        slidesPerView={3}
+        rows={1}
+        className='cd_rounded-sm bg-white px-2 py-1 shadow'
+      >
         {(product) => (
           <ProductCard
             variant='compact'
@@ -57,7 +76,13 @@ function MultipleInterests() {
           />
         )}
       </ProductSliderSection>
-      <ProductSliderSection title='Our Featured' data={camerasData} slidesPerView={3} rows={1}>
+      <ProductSliderSection
+        title='Our Featured'
+        data={camerasData}
+        slidesPerView={3}
+        rows={1}
+        className='cd_rounded-sm bg-white px-2 py-1 shadow'
+      >
         {(product) => (
           <ProductCard
             variant='compact'
@@ -68,7 +93,13 @@ function MultipleInterests() {
           />
         )}
       </ProductSliderSection>
-      <ProductSliderSection title='Trendy Now' data={laptopsData} slidesPerView={3} rows={1}>
+      <ProductSliderSection
+        title='Trendy Now'
+        data={laptopsData}
+        slidesPerView={3}
+        rows={1}
+        className='cd_rounded-sm bg-white px-2 py-1 shadow'
+      >
         {(product) => (
           <ProductCard
             variant='compact'
