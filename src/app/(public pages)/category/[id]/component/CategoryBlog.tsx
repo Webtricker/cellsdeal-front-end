@@ -1,18 +1,18 @@
-import Button from "@/sharedComponets/ui/buttons/Button";
-import BlogCardWrapper from "@/sharedComponets/ui/wrapper/BlogCardWrapper";
-import { IBlog } from "@/types/post";
-import Link from "next/link";
-import React from "react";
+import { Button } from '@/components/ui/button';
+import BlogCardWrapper from '@/sharedComponets/wrapper/BlogCardWrapper';
+import { IBlog } from '@/types/data';
+import Link from 'next/link';
+import React from 'react';
 
 export default function CategoryBlog({ blogs }: { blogs: IBlog[] }) {
   if (!blogs.length)
     return (
-      <div className="w-full flex items-center justify-center min-h-[200px]">
-        <p className="text-center">No blog found</p>
+      <div className='flex min-h-[200px] w-full items-center justify-center'>
+        <p className='text-center'>No blog found</p>
       </div>
     );
   return (
-    <div className="section-speacing w-full grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-5 lg:gap-6 xl:gap-7 2xl:gap-8">
+    <div className='section-speacing grid w-full grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-5 md:grid-cols-[repeat(auto-fill,minmax(350px,1fr))] lg:gap-6 xl:gap-7 2xl:gap-8'>
       {blogs.map((blog) => (
         <BlogCardWrapper
           key={blog._id}
@@ -24,7 +24,7 @@ export default function CategoryBlog({ blogs }: { blogs: IBlog[] }) {
           excerpt={blog.excerp}
         >
           <Link href={`/blog/${blog.slug}`}>
-            <Button label="Read More" className="!text-sm !py-2.5" />
+            <Button className='!py-2.5 !text-sm'>Read More</Button>
           </Link>
         </BlogCardWrapper>
       ))}
