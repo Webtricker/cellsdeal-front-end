@@ -20,7 +20,7 @@ export default async function BlogPage() {
             <p className='wt_text-shadow wt_fs-xl bold mt-5 !text-white'>{pageDate?.description}</p>
           </div>
         </Container>
-        {pageDate?.bannerBG?.type === 'image' ? (
+        {/* {pageDate?.bannerBG?.type === 'image' ? (
           <Image
             title='Click to change background'
             width={1800}
@@ -40,7 +40,7 @@ export default async function BlogPage() {
           >
             <source src={pageDate?.bannerBG?.src || ''} type='video/mp4' />
           </video>
-        )}
+        )} */}
       </section>
       <BlogCardsContainer />
     </main>
