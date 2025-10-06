@@ -5,13 +5,14 @@ import React from 'react'
 import TopWeeklyVendors from './components/TopWeeklyVendors';
 import Articles from './components/Articles';
 import HomeBanner from './components/HomeBanner';
+import MultipleInterests from './components/MultipleInterests';
 
 export default function PubliceHomePage() {
   return (
     <>
       <HomeBanner />
       <TopWeeklyVendors />
-      {/* <MultipleInterests /> */}
+      <MultipleInterests />
       {/* <JustForYou /> */}
       {/* <SalesProducts /> */}
       <Articles />
