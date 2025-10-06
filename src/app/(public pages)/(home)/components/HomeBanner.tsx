@@ -49,12 +49,14 @@ const Banner = () => {
 
 
 const HotDeals = () => {
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 6);
     return <>
         <div className="w-full md:w-[unset] min-h-[200px] z-0 relative items-center justify-between md:grow flex flex-col bg-amber-500 cd_rounded overflow-hidden p-5 lg:p-10 xl:p-14">
             <h2 className='text-center text-white'>Hot Deals of The Day</h2>
             <Image src="/images/home/air-pod.png" className='hidden lg:block absolute top-[50%] left-0 translate-y-[-50%] -z-10 w-full h-auto' width={300} height={200} alt="" />
             <div className="flex flex-col gap-4 items-center">
-                <Countdown />
+                <Countdown targetDate={targetDate.toString()} />
                 <Button className="bg-transparent text-white" variant="outline" >
                     Buy Now
                 </Button>

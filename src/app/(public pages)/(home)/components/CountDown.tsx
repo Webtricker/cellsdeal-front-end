@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 
 type CountdownProps = {
-    targetDate?: string; // e.g. "2025-12-31T23:59:59"
+    targetDate: string; // e.g. "2025-12-31T23:59:59"
 };
 
-export default function Countdown({ }: CountdownProps) {
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 6);
+export default function Countdown({targetDate }: CountdownProps) {
 
     const calculateTimeLeft = () => {
         const difference = +new Date(targetDate) - +new Date();
