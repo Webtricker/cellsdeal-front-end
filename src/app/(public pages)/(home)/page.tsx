@@ -5,6 +5,7 @@ import React from 'react';
 import TopWeeklyVendors from './components/TopWeeklyVendors';
 import Articles from './components/Articles';
 import HomeBanner from './components/HomeBanner';
+import Brands from './components/Brands';
 
 export default function PublicHomePage() {
   return (
@@ -14,6 +15,7 @@ export default function PublicHomePage() {
       <JustForYou />
       <SalesProducts />
       <TopWeeklyVendors />
+      <Brands />
       <Articles />
     </>
   );

@@ -1,3 +1,14 @@
+import brand1 from '@/assets/img/brands/brand01.png';
+import brand2 from '@/assets/img/brands/brand02.png';
+import brand3 from '@/assets/img/brands/brand03.png';
+import brand4 from '@/assets/img/brands/brand04.png';
+import brand5 from '@/assets/img/brands/brand05.png';
+import brand6 from '@/assets/img/brands/brand06.png';
+import brand8 from '@/assets/img/brands/brand08.png';
+import brand9 from '@/assets/img/brands/brand09.png';
+
+export const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand8, brand9];
+
 export interface Product {
   id: number;
   name: string;
