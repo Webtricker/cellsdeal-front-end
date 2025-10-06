@@ -37,8 +37,8 @@ export function ProductCard({
   return (
     <Card
       className={cn(
-        'group border-border bg-card relative overflow-hidden p-3 md:p-3.5 transition-shadow hover:shadow-lg',
-        isCompact ? 'max-w-[140px]' : 'max-w-[280px]'
+        'group border-border bg-card relative overflow-hidden p-2 transition-shadow hover:shadow-lg',
+        isCompact ? '!cd_rounded-sm max-w-[140px]' : 'max-w-[280px]'
       )}
     >
       <CardContent className='!p-0'>
@@ -139,7 +139,7 @@ export function ProductCard({
             <Link href={''}>
               <Button
                 variant='outline'
-                className='border-primary text-primary hover:bg-primary cd_rounded-sm mt-3 bg-transparent hover:text-white'
+                className='border-primary text-primary hover:bg-primary cd_rounded-sm mt-3 w-full bg-transparent hover:text-white'
                 onClick={onSelectOptions}
               >
                 Select options
