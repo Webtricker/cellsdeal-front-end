@@ -2,11 +2,12 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
 import ContactForm from './components/ContactForm';
 import Faq from './components/Faq';
+import Container from '@/sharedComponets/wrapper/Container';
 
-export default function Page() {
+export default function ContactPage() {
   return (
     <>
-      <section className='container mx-auto my-8 grid grid-cols-1 gap-8 px-4 md:mb-24 lg:my-16 lg:grid-cols-2 lg:gap-12'>
+      <Container className='my-8 grid grid-cols-1 gap-8 md:mb-24 lg:my-16 lg:grid-cols-2 lg:gap-12'>
         {/* Keep In Touch With Us Section */}
         <div>
           <div className='flex flex-col items-start'>
@@ -65,7 +66,7 @@ export default function Page() {
 
         {/* Get in Touch Form Section */}
         <ContactForm />
-      </section>
+      </Container>
       <section className='relative h-[300px] md:h-[550px]'>
         <iframe
           className='min-h-[400px]'
