@@ -8,6 +8,7 @@ import img1 from '@/assets/img/become-a-vendor/banner-1.jpg';
 import img2 from '@/assets/img/become-a-vendor/banner-2.jpg';
 import customerImg1 from '@/assets/img/become-a-vendor/customer-1.png';
 import customerImg2 from '@/assets/img/become-a-vendor/customer-2.png';
+import bg from '@/assets/img/become-a-vendor/banner-4.jpg';
 
 function BecomeAVendorPage() {
   return (
@@ -229,7 +230,7 @@ function BecomeAVendorPage() {
 
       {/* FAQ Section */}
       <section className='py-12 md:py-20'>
-        <div className='container mx-auto px-4'>
+        <Container>
           <div className='mb-12 space-y-4 text-center'>
             <p className='text-primary text-sm font-medium tracking-wide uppercase'>
               Frequently Asked Questions
@@ -240,7 +241,7 @@ function BecomeAVendorPage() {
           </div>
           <div className='mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2'>
             <div className='space-y-3'>
-              <h3 className='text-foreground text-lg font-bold'>How can I add new products?</h3>
+              <h4 className='text-foreground text-lg font-bold'>How can I add new products?</h4>
               <p className='text-muted-foreground text-sm leading-relaxed'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -248,7 +249,7 @@ function BecomeAVendorPage() {
               </p>
             </div>
             <div className='space-y-3'>
-              <h3 className='text-foreground text-lg font-bold'>How do I get paid?</h3>
+              <h4 className='text-foreground text-lg font-bold'>How do I get paid?</h4>
               <p className='text-muted-foreground text-sm leading-relaxed'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -256,49 +257,42 @@ function BecomeAVendorPage() {
               </p>
             </div>
             <div className='space-y-3'>
-              <h3 className='text-foreground text-lg font-bold'>How can I know stock?</h3>
+              <h4 className='text-foreground text-lg font-bold'>How can I know stock?</h4>
               <p className='text-muted-foreground text-sm leading-relaxed'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Venenatis tellus.
               </p>
             </div>
             <div className='space-y-3'>
-              <h3 className='text-foreground text-lg font-bold'>
+              <h4 className='text-foreground text-lg font-bold'>
                 Do I need a credit or debit card to create a shop?
-              </h3>
+              </h4>
               <p className='text-muted-foreground text-sm leading-relaxed'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua.
               </p>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* CTA Section */}
       <section className='relative overflow-hidden py-20 md:py-32'>
-        <div className='absolute inset-0 bg-gradient-to-r from-teal-700 to-teal-900'>
-          <Image
-            src='/abstract-business-background-pattern.jpg'
-            alt='Background'
-            fill
-            className='object-cover opacity-20'
-          />
+        <div className='absolute inset-0 bg-gradient-to-r from-gray-500/70 to-gray-300/40'>
+          <Image src={bg.src} alt='Background' fill className='object-cover opacity-20' />
         </div>
-        <div className='relative z-10 container mx-auto px-4'>
+        <Container className='relative z-10'>
           <div className='mx-auto max-w-3xl space-y-8 text-center'>
             <h2 className='text-3xl leading-tight font-bold text-white md:text-4xl lg:text-5xl'>
               Let{"'"}s talk about how we can make brands work for you
             </h2>
-            <Button
-              size='lg'
-              variant='outline'
-              className='border-white bg-transparent font-medium text-white uppercase hover:bg-white hover:text-teal-900'
-            >
-              Register Now
-            </Button>
+            <Link href='/register' className='inline-block'>
+              <Button size='lg' className='hover:bg-accent hover:text-black'>
+                Register Now
+              </Button>
+            </Link>
           </div>
-        </div>
+        </Container>
       </section>
     </main>
   );
