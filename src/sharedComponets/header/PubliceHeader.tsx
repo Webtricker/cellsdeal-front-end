@@ -34,9 +34,16 @@ export default function PubliceHeader() {
             <Link className='cd_fs-xs hidden lg:block' href='/my-account'>
               My Account
             </Link>
-            <Link href='/register' className='cd_fs-xs flex items-center gap-1'>
-              <UserRound className='h-4 w-4' /> Sign In / Register
-            </Link>
+            <span className='cd_fs-xs flex items-center gap-1'>
+              <UserRound className='h-4 w-4' />
+              <Link href={'/login'} className='hover:text-primary hover:underline'>
+                Sign In
+              </Link>
+              {' / '}
+              <Link href={'/register'} className='hover:text-primary hover:underline'>
+                Register
+              </Link>
+            </span>
             {/* ===== top links ends ==== */}
           </div>
         </Container>

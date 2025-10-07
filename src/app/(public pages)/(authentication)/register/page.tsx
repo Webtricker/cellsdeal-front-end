@@ -3,7 +3,7 @@ import RegisterForm from './components/RegisterForm';
 
 export default function RegisterPage() {
   return (
-    <div className='bg-background flex min-h-screen items-center justify-center p-4'>
+    <div className='bg-background section-speacing grid place-items-center p-4'>
       <Card className='w-full max-w-2xl'>
         <CardHeader>
           <CardTitle className='text-2xl'>Create an Account</CardTitle>
