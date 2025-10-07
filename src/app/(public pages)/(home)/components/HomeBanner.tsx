@@ -8,6 +8,13 @@ import Image from 'next/image';
 import Countdown from './CountDown';
 
 const Banner = () => {
+    /*
+        data: {
+        newArrival: [{}],
+        topRanking: [{}],
+        popularDepartments: [{}],
+    }
+    */
     return <>
         <div className="w-full md:w-[65%] relative cd_rounded overflow-hidden">
             <BannerSlider className='w-full h-[60vh] max-h-[400px] lg:max-h-[450px] min-h-[350px] lg:min-h-[400px]'>

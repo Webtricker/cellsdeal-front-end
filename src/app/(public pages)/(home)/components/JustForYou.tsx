@@ -7,8 +7,8 @@ import Container from '@/sharedComponets/wrapper/Container';
 function JustForYou() {
   return (
     <section className='w-full section-bottom-speacing'>
-      <Container className='py-8'>
-        <ProductSliderSection title='Sale Products' data={accessoriesData} slidesPerView={5} rows={2}>
+      <Container className=''>
+        <ProductSliderSection title='Just For You' data={accessoriesData} slidesPerView={5} rows={2}>
           {(product) => (
             <ProductCard
               variant='default'
