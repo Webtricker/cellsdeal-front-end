@@ -34,7 +34,7 @@ export default function PubliceHeader() {
             <Link className='cd_fs-xs hidden lg:block' href='/my-account'>
               My Account
             </Link>
-            <Link href='/my-account' className='cd_fs-xs flex items-center gap-1'>
+            <Link href='/register' className='cd_fs-xs flex items-center gap-1'>
               <UserRound className='h-4 w-4' /> Sign In / Register
             </Link>
             {/* ===== top links ends ==== */}
