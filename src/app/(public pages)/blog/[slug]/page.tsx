@@ -33,7 +33,7 @@ const getBlogData = async (slug: string) => {
 
 const getAllBlogSlugs = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog-slugs`, {
+    const res = await fetch(`${process.env.DEMO_PUBLIC_BASE_URL}/api/blog-slugs`, {
       cache: 'no-store',
     });
 

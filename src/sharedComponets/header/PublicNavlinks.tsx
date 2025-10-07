@@ -13,8 +13,8 @@ export default function PublicNavlinks() {
       <Link className='cd_fs-xs' href='/blog'>
         Blogs
       </Link>
-      <Link className='cd_fs-xs' href='/vendor'>
-        Vendor
+      <Link className='cd_fs-xs' href='/become-a-vendor'>
+        Become a Vendor
       </Link>
       <Link className='cd_fs-xs' href='/contact'>
         Contact
