@@ -2,9 +2,8 @@ import Container from '@/sharedComponets/wrapper/Container'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
-import ProductFilter from './components/ProductFilter'
-import FilterdProducts from './components/FilterdProducts'
 import PageContent from './components/PageContent'
+import { PriceRangeSlider } from './components/DemoComponent'
 
 export default function ShopPage() {
     return (
@@ -26,14 +25,16 @@ export default function ShopPage() {
             </section>
 
 
-            <section className='w-full'>
-                <Container className='flex'>
-                  <PageContent />
+            <section className='w-full section-bottom-speacing'>
+                <Container className='flex relative items-start lg:gap-5 xl:gap-8'>
+                    <PageContent />
                 </Container>
             </section>
-           <section className='min-h-[200vh]'>
-
-           </section>
+            <section className='w-full section-bottom-speacing'>
+                <Container className='flex relative items-start lg:gap-5 xl:gap-8'>
+                    <PriceRangeSlider />
+                </Container>
+            </section>
         </>
     )
 }

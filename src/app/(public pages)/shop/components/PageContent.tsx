@@ -1,11 +1,14 @@
 import React from 'react'
-import ProductFilter from './ProductFilter'
 import FilterdProducts from './FilterdProducts'
+import { ProductFilter } from './ProductFilter'
+import { FilterSidebarProvider } from '@/provider/FilterSidebarContext'
 
 export default function PageContent() {
     return (
         <>
-            <ProductFilter />
+            <FilterSidebarProvider>
+                <ProductFilter />
+            </FilterSidebarProvider>
             <FilterdProducts />
         </>
     )
