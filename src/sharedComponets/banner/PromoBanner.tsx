@@ -27,7 +27,7 @@ export function PromoBanner({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl ${bgColor} flex min-h-[280px] items-center justify-between px-8 py-2`}
+      className={`relative overflow-hidden rounded-2xl ${bgColor} flex min-h-[280px] flex-col items-center justify-between px-8 py-2 lg:flex-row`}
     >
       {/* Image */}
       <div className='relative flex h-full w-[45%] items-center justify-center'>
@@ -41,7 +41,7 @@ export function PromoBanner({
       </div>
 
       {/* Content */}
-      <div className='relative z-10 flex w-1/2 flex-col gap-4'>
+      <div className='relative z-10 flex w-full flex-col gap-4 lg:w-1/2'>
         <span className='text-sm font-medium tracking-wider text-white/90 uppercase'>{label}</span>
         <h2 className='text-4xl leading-tight font-bold text-white lg:text-5xl'>{title}</h2>
         {subtitle && <p className='text-lg font-medium text-white/90'>{subtitle}</p>}
