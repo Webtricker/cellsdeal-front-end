@@ -30,11 +30,6 @@ export default function ShopPage() {
                     <PageContent />
                 </Container>
             </section>
-            <section className='w-full section-bottom-speacing'>
-                <Container className='flex relative items-start lg:gap-5 xl:gap-8'>
-                    <PriceRangeSlider />
-                </Container>
-            </section>
         </>
     )
 }

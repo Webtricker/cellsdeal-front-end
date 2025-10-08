@@ -13,9 +13,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import Link from 'next/link';
-import { Slider } from '@/components/ui/slider';
 import Image from 'next/image';
-import { Range } from 'react-range';
 import PriceRange from './PriceRange';
 
 interface Props {
@@ -24,21 +22,12 @@ interface Props {
 
 export const ProductFilter: React.FC<Props> = ({ className = "" }) => {
     const { isOpen, close } = useFilterSidebar();
-    const { toggle } = useFilterSidebar();
     return (
         <>
-            <Button
-                className='lg:hidden'
-                onClick={toggle}
-            >
-                <Menu />
-            </Button>
-
-
             {/* ======== sidebar ======= */}
             <div
                 className={cn(
-                    'fixed top-0 left-0 z-50 h-full w-full lg:min-w-[310px] lg:w-3/12 lg:pt-1.5 transition-transform duration-300 lg:static lg:translate-x-0 lg:shadow-none',
+                    'fixed top-0 left-0 z-50 h-full max-h-screen overflow-y-auto lg:max-h-auto overflow-x-hidden w-full lg:min-w-[300px] lg:w-2/12 lg:pt-1.5 transition-transform duration-300 lg:sticky lg:top-[72px] lg:translate-x-0 lg:shadow-none',
                     isOpen ? 'translate-x-0' : '-translate-x-full',
                     className
                 )}
@@ -101,27 +90,27 @@ export const ProductFilter: React.FC<Props> = ({ className = "" }) => {
                             <AccordionItem value="item-3" className='border-0' >
                                 <AccordionTrigger className='hover:!no-underline border-b cd_fs-md' ><h6>Brand</h6></AccordionTrigger>
                                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                                    <ul className='mt-7'>
-                                        <li className='flex items-center gap-2'>
-                                            <Image src="/images/brands/brand-1.png" width={100} height={100} alt="Brand image" /><p>Elegant Auto Group</p>
-                                        </li>
-                                        <li className='flex items-center gap-2'>
-                                            <Image src="/images/brands/brand-2.png" width={100} height={100} alt="Brand image" /><p>Green Gas</p>
-                                        </li>
-                                        <li className='flex items-center gap-3'>
-                                            <Image src="/images/brands/brand-1.png" width={100} height={100} alt="Brand image" /><p>Node</p>
-                                        </li>
-                                        <li className='flex items-center gap-4'>
-                                            <Image src="/images/brands/brand-1.png" width={100} height={100} alt="Brand image" /><p>NS8</p>
+                                    <ul className='mt-7 flex flex-col gap-5'>
+                                        <li className='flex items-center gap-5'>
+                                            <Image className='w-[100px] h-10 object-cover border' src="/images/brands/brand-1.png" width={100} height={100} alt="Brand image" /><p>Elegant Auto Group</p>
                                         </li>
                                         <li className='flex items-center gap-5'>
-                                            <Image src="/images/brands/brand-1.png" width={100} height={100} alt="Brand image" /><p>Red</p>
+                                            <Image className='w-[100px] h-10 object-cover border' src="/images/brands/brand-2.png" width={100} height={100} alt="Brand image" /><p>Green Gas</p>
                                         </li>
-                                        <li className='flex items-center gap-6'>
-                                            <Image src="/images/brands/brand-1.png" width={100} height={100} alt="Brand image" /><p>SASS</p>
+                                        <li className='flex items-center gap-5'>
+                                            <Image className='w-[100px] h-10 object-cover border' src="/images/brands/brand-3.png" width={100} height={100} alt="Brand image" /><p>Node</p>
                                         </li>
-                                        <li className='flex items-center gap-7'>
-                                            <Image src="/images/brands/brand-1.png" width={100} height={100} alt="Brand image" /><p>Sterline</p>
+                                        <li className='flex items-center gap-5'>
+                                            <Image className='w-[100px] h-10 object-cover border' src="/images/brands/brand-4.png" width={100} height={100} alt="Brand image" /><p>NS8</p>
+                                        </li>
+                                        <li className='flex items-center gap-5'>
+                                            <Image className='w-[100px] h-10 object-cover border' src="/images/brands/brand-5.png" width={100} height={100} alt="Brand image" /><p>Red</p>
+                                        </li>
+                                        <li className='flex items-center gap-5'>
+                                            <Image className='w-[100px] h-10 object-cover border' src="/images/brands/brand-6.png" width={100} height={100} alt="Brand image" /><p>SASS</p>
+                                        </li>
+                                        <li className='flex items-center gap-5'>
+                                            <Image className='w-[100px] h-10 object-cover border' src="/images/brands/brand-7.png" width={100} height={100} alt="Brand image" /><p>Sterline</p>
                                         </li>
                                     </ul>
                                 </AccordionContent>

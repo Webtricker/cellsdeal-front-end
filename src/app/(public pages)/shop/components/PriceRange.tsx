@@ -12,15 +12,7 @@ export default function PriceRange() {
   const [values, setValues] = useState([50, 100]);
 
   return (
-    <div className="w-full max-w-sm">
-      <p className="font-medium mb-2">Price Range</p>
-
-      {/* Price values */}
-      <div className="text-sm font-semibold text-gray-700 mb-3 text-center">
-        ${values[0].toLocaleString()} - ${values[1].toLocaleString()}
-      </div>
-
-      {/* Slider */}
+    <div className="w-full">
       <Range
         step={STEP}
         min={MIN}

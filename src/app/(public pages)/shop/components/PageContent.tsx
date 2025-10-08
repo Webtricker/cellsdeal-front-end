@@ -8,8 +8,8 @@ export default function PageContent() {
         <>
             <FilterSidebarProvider>
                 <ProductFilter />
+                <FilterdProducts />
             </FilterSidebarProvider>
-            <FilterdProducts />
         </>
     )
 }
