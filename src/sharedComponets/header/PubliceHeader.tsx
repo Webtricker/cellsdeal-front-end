@@ -1,21 +1,14 @@
 import React from 'react';
 import Container from '../wrapper/Container';
 import Link from 'next/link';
-import {
-  ClockFading,
-  Heart,
-  MapPin,
-  MessageCircleMore,
-  PhoneCall,
-  ShoppingCart,
-  UserRound,
-} from 'lucide-react';
+import { ClockFading, Heart, MapPin, MessageCircleMore, PhoneCall, UserRound } from 'lucide-react';
 import SiteLogo from './SiteLogo';
 import SearchFilter from './SearchFilter';
 import { VerticalDivider } from '../utils/Utils';
 import PublicNavlinks from './PublicNavlinks';
 import AllCategories from './AllCategories';
 import PublicSidebar from './PublicSidebar';
+import { CartSheet } from '../cart/CartSheet';
 
 export default function PubliceHeader() {
   return (
@@ -65,9 +58,7 @@ export default function PubliceHeader() {
             <Link href='' className='hidden md:block'>
               <Heart className='h-5 w-5' />
             </Link>
-            <Link href=''>
-              <ShoppingCart className='h-5 w-5' />
-            </Link>
+            <CartSheet />
           </div>
         </Container>
       </section>
