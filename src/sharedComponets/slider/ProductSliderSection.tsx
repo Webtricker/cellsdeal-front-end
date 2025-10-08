@@ -39,6 +39,25 @@ export function ProductSliderSection({
   const mobileSlides = isCompact ? 2.5 : 1.5;
   const spaceBetween = isCompact ? 12 : 16;
 
+  const config = {
+    640: {
+      slidesPerView: isCompact ? Math.min(slidesPerView, 4) : Math.min(slidesPerView, 2),
+      slidesPerGroup: 1,
+    },
+    768: {
+      slidesPerView: isCompact ? Math.min(slidesPerView, 5) : Math.min(slidesPerView, 3),
+      slidesPerGroup: 1,
+    },
+    1024: {
+      slidesPerView: isCompact ? Math.min(slidesPerView, 6) : Math.min(slidesPerView, 4),
+      slidesPerGroup: 1,
+    },
+    1280: {
+      slidesPerView: slidesPerView,
+      slidesPerGroup: 1,
+    },
+  };
+
   return (
     <section className={cn('w-full', className)}>
       <div className='mb-6 flex items-center justify-between'>
@@ -83,24 +102,7 @@ export function ProductSliderSection({
           rows: rows,
           fill: 'row',
         }}
-        breakpoints={{
-          640: {
-            slidesPerView: isCompact ? Math.min(slidesPerView, 4) : Math.min(slidesPerView, 2),
-            slidesPerGroup: 1,
-          },
-          768: {
-            slidesPerView: isCompact ? Math.min(slidesPerView, 5) : Math.min(slidesPerView, 3),
-            slidesPerGroup: 1,
-          },
-          1024: {
-            slidesPerView: isCompact ? Math.min(slidesPerView, 6) : Math.min(slidesPerView, 4),
-            slidesPerGroup: 1,
-          },
-          1280: {
-            slidesPerView: slidesPerView,
-            slidesPerGroup: 1,
-          },
-        }}
+        breakpoints={config}
         className='w-full'
       >
         {data.map((item, index) => (
