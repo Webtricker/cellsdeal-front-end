@@ -7,6 +7,7 @@ import { cartDemoData, CartItem } from '@/lib/demo-data';
 import { CartCard } from '@/sharedComponets/cards/CartCard';
 import Container from '@/sharedComponets/wrapper/Container';
 import CartHeader from './components/CartHeader';
+import Link from 'next/link';
 
 // All cart interactions are handled on the client side for demo purposes.
 // In a real application, these would involve API calls to the backend.
@@ -75,9 +76,11 @@ export default function CartPage() {
                   </div>
                 </div>
               </div>
-              <Button className='mt-6 w-full' size='lg'>
-                Proceed to Checkout
-              </Button>
+              <Link href='/checkout' className='mt-6 block'>
+                <Button className='w-full' size='lg'>
+                  Proceed to Checkout
+                </Button>
+              </Link>
             </Card>
           </div>
         </div>
