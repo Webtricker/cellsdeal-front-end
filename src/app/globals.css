@@ -1048,6 +1048,10 @@ p.bouncing-text {
   @apply h-6 w-6;
 }
 
+.site_link{
+  @apply text-blue-600 duration-300 hover:text-blue-500
+}
+
 /* .product-filter button{
   padding: 8px 0;
   margin-top: 12px;

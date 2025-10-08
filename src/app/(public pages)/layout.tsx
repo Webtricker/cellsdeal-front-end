@@ -1,5 +1,6 @@
 import Footer from '@/sharedComponets/footer/Footer';
 import PubliceHeader from '@/sharedComponets/header/PubliceHeader';
+import ProductDetailsModal from '@/sharedComponets/modal/ProductDetailsModal';
 import React from 'react';
 
 export default function layout({
@@ -11,6 +12,7 @@ export default function layout({
     <>
       <PubliceHeader />
       {children}
+      <ProductDetailsModal />
       <Footer />
     </>
   );

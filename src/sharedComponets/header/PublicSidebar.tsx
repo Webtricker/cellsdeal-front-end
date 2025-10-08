@@ -42,7 +42,6 @@ export function MenuTabSwitcher() {
                             </Link>
                         </li>
                     </ul>
-
                 </TabsContent>
                 <TabsContent value="category">
                     <ul className="flex flex-col">
@@ -98,8 +97,8 @@ export default function PublicSidebar() {
     return (
         <Drawer direction="left" >
             <DrawerTrigger asChild>
-                <Button>
-                    <Menu className='w-5 md:w-6 h-5 md:h-6 lg:hidden' />
+                <Button className="lg:hidden">
+                    <Menu className='w-5 md:w-6 h-5 md:h-6' />
                 </Button>
             </DrawerTrigger>
             <DrawerContent>
