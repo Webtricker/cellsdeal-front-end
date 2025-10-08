@@ -270,7 +270,7 @@ function CheckoutForm() {
       {/* Right Column - Order Summary */}
       <div className='lg:sticky lg:top-8 lg:h-fit'>
         <div className='bg-card rounded-lg border p-6'>
-          <h2 className='mb-6 text-xl font-bold'>YOUR ORDER</h2>
+          <h2 className='mb-6 !text-xl font-bold'>YOUR ORDER</h2>
 
           {/* Product List */}
           <div className='space-y-4 border-b pb-4'>
@@ -308,7 +308,7 @@ function CheckoutForm() {
 
           {/* Payment Methods */}
           <div className='mt-6'>
-            <h3 className='mb-4 font-semibold'>Payment Methods</h3>
+            <h4 className='mb-4 font-semibold'>Payment Methods</h4>
 
             <Form {...form}>
               <FormField
@@ -332,10 +332,6 @@ function CheckoutForm() {
                             >
                               bKash
                             </label>
-                            <p className='text-muted-foreground mt-1 text-xs'>
-                              Make your payment via bKash. Please use your Order ID as the payment
-                              reference.
-                            </p>
                           </div>
                         </div>
 
@@ -349,11 +345,6 @@ function CheckoutForm() {
                             >
                               Direct bank transfer
                             </label>
-                            <p className='text-muted-foreground mt-1 text-xs'>
-                              Make your payment directly into our bank account. Please use your
-                              Order ID as the payment reference. Your order will not be shipped
-                              until the funds have cleared in our account.
-                            </p>
                           </div>
                         </div>
 
@@ -367,9 +358,6 @@ function CheckoutForm() {
                             >
                               Cash on delivery
                             </label>
-                            <p className='text-muted-foreground mt-1 text-xs'>
-                              Pay with cash upon delivery.
-                            </p>
                           </div>
                         </div>
                       </RadioGroup>

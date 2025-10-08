@@ -9,6 +9,7 @@ import PublicNavlinks from './PublicNavlinks';
 import AllCategories from './AllCategories';
 import PublicSidebar from './PublicSidebar';
 import { CartSheet } from '../cart/CartSheet';
+import { RecentlyViewed } from '../dropdown/RecentlyViewed';
 
 export default function PubliceHeader() {
   return (
@@ -73,10 +74,10 @@ export default function PubliceHeader() {
               <MapPin className='h-7 w-7 rounded-full bg-white p-1 text-black' />
               <span className='cd_fs-xs'>Track Order</span>
             </Link>
-            <Link href='' className='flex flex-nowrap items-center gap-2'>
-              <ClockFading className='h-7 w-7 rounded-full bg-white p-1 text-black' />
+            <div className='flex flex-nowrap items-center gap-2'>
+              <RecentlyViewed />
               <span className='cd_fs-xs'>Recently Viewed</span>
-            </Link>
+            </div>
           </div>
         </Container>
       </section>
