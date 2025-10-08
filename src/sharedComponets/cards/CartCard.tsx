@@ -90,7 +90,6 @@ export function CartCard({ item, variant = 'default', onQuantityChange, onRemove
     );
   }
 
-  // Default/Large variant
   return (
     <div className='relative grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-4 border-b py-4 md:gap-6 md:py-6'>
       {/* Remove button */}
@@ -114,8 +113,8 @@ export function CartCard({ item, variant = 'default', onQuantityChange, onRemove
           />
         </div>
         <div className='flex flex-col gap-1'>
-          <h3 className='leading-tight font-medium'>{item.name}</h3>
-          <p className='text-muted-foreground text-sm'>
+          <h4 className='leading-tight font-medium'>{item.name}</h4>
+          <p className='text-muted-foreground !text-sm'>
             <span className='font-medium'>Vendor:</span> {item.vendor}
           </p>
         </div>
@@ -153,19 +152,6 @@ export function CartCard({ item, variant = 'default', onQuantityChange, onRemove
       <div className='col-span-2 text-right md:col-span-1'>
         <p className='text-lg font-semibold'>${subtotal.toFixed(2)}</p>
       </div>
-    </div>
-  );
-}
-
-// Cart header component for the table-like layout
-export function CartHeader() {
-  return (
-    <div className='hidden grid-cols-[auto_1fr_auto_auto_auto] gap-6 border-b pb-4 font-semibold md:grid'>
-      <div className='w-6' /> {/* Space for remove button */}
-      <div>Product</div>
-      <div>Price</div>
-      <div className='text-center'>Quantity</div>
-      <div className='text-right'>Subtotal</div>
     </div>
   );
 }
