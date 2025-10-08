@@ -14,6 +14,7 @@ function MultipleInterests() {
         data={laptopsData}
         slidesPerView={3}
         rows={1}
+        variant='compact'
       >
         {(product) => (
           <ProductCard
@@ -30,6 +31,7 @@ function MultipleInterests() {
         data={camerasData}
         slidesPerView={3}
         rows={1}
+        variant='compact'
         className='cd_rounded-sm bg-white px-2 py-1 shadow'
       >
         {(product) => (
@@ -46,6 +48,7 @@ function MultipleInterests() {
         title='Top Rankings'
         data={laptopsData}
         slidesPerView={3}
+        variant='compact'
         rows={1}
         className='cd_rounded-sm bg-white px-2 py-1 shadow'
       >
@@ -62,6 +65,7 @@ function MultipleInterests() {
       <ProductSliderSection
         title='Best Sellers'
         data={laptopsData}
+        variant='compact'
         slidesPerView={3}
         rows={1}
         className='cd_rounded-sm bg-white px-2 py-1 shadow'
@@ -78,6 +82,7 @@ function MultipleInterests() {
       </ProductSliderSection>
       <ProductSliderSection
         title='Our Featured'
+        variant='compact'
         data={camerasData}
         slidesPerView={3}
         rows={1}
@@ -96,6 +101,7 @@ function MultipleInterests() {
       <ProductSliderSection
         title='Trendy Now'
         data={laptopsData}
+        variant='compact'
         slidesPerView={3}
         rows={1}
         className='cd_rounded-sm bg-white px-2 py-1 shadow'
