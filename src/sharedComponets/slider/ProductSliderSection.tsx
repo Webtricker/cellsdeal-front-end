@@ -1,9 +1,13 @@
 'use client';
 
 import type React from 'react';
-
-import { useCallback, useEffect, useState } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
+import { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Grid } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/grid';
+import 'swiper/css/navigation';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -15,6 +19,7 @@ export interface ProductSliderSectionProps {
   slidesPerView?: number;
   rows?: 1 | 2;
   className?: string;
+  variant?: 'default' | 'compact';
 }
 
 export function ProductSliderSection({
@@ -24,102 +29,58 @@ export function ProductSliderSection({
   slidesPerView = 4,
   rows = 1,
   className,
+  variant = 'default',
 }: ProductSliderSectionProps) {
-  const [responsiveSlidesPerView, setResponsiveSlidesPerView] = useState(slidesPerView);
+  const swiperRef = useRef<SwiperType | null>(null);
+  const prevButtonRef = useRef<HTMLButtonElement>(null);
+  const nextButtonRef = useRef<HTMLButtonElement>(null);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: 'start',
-    slidesToScroll: 1,
-    skipSnaps: false,
-    loop: true,
-    duration: 25,
-  });
+  const isCompact = variant === 'compact';
+  const mobileSlides = isCompact ? 2.5 : 1.5;
+  const spaceBetween = isCompact ? 12 : 16;
 
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-
-      if (width < 640) {
-        // Mobile: 1-2 slides
-        setResponsiveSlidesPerView(Math.min(slidesPerView, 2));
-      } else if (width < 768) {
-        // Small tablet: 2-3 slides
-        setResponsiveSlidesPerView(Math.min(slidesPerView, 3));
-      } else if (width < 1024) {
-        // Tablet: 3-4 slides
-        setResponsiveSlidesPerView(Math.min(slidesPerView, 4));
-      } else {
-        // Desktop: use configured slidesPerView
-        setResponsiveSlidesPerView(slidesPerView);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [slidesPerView]);
-
-  useEffect(() => {
-    if (emblaApi) {
-      emblaApi.reInit();
-    }
-  }, [emblaApi, responsiveSlidesPerView]);
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
-  }, [emblaApi, onSelect]);
-
-  const itemsPerSlide = rows;
-
-  const slides: any[][] = [];
-  for (let i = 0; i < data.length; i += itemsPerSlide) {
-    slides.push(data.slice(i, i + itemsPerSlide));
-  }
+  const config = {
+    640: {
+      slidesPerView: isCompact ? Math.min(slidesPerView, 4) : Math.min(slidesPerView, 2),
+      slidesPerGroup: 1,
+    },
+    768: {
+      slidesPerView: isCompact ? Math.min(slidesPerView, 5) : Math.min(slidesPerView, 3),
+      slidesPerGroup: 1,
+    },
+    1024: {
+      slidesPerView: isCompact ? Math.min(slidesPerView, 6) : Math.min(slidesPerView, 4),
+      slidesPerGroup: 1,
+    },
+    1280: {
+      slidesPerView: slidesPerView,
+      slidesPerGroup: 1,
+    },
+  };
 
   return (
     <section className={cn('w-full', className)}>
-      {/* Header with Title and Navigation */}
-      <div className='section-heading flex items-center justify-between'>
+      <div className='mb-6 flex items-center justify-between'>
         <h2>{title}</h2>
 
         {/* Navigation Controls */}
         <div className='flex gap-2'>
           <Button
+            ref={prevButtonRef}
             variant='ghost'
             size='icon'
-            onClick={scrollPrev}
-            disabled={!canScrollPrev}
-            className='h-10 w-10 rounded-full bg-transparent disabled:opacity-30'
+            onClick={() => swiperRef.current?.slidePrev()}
+            className='h-10 w-10 rounded-full bg-transparent'
             aria-label='Previous slide'
           >
             <ChevronLeft className='h-5 w-5' />
           </Button>
           <Button
+            ref={nextButtonRef}
             variant='ghost'
             size='icon'
-            onClick={scrollNext}
-            disabled={!canScrollNext}
-            className='h-10 w-10 rounded-full bg-transparent disabled:opacity-30'
+            onClick={() => swiperRef.current?.slideNext()}
+            className='h-10 w-10 rounded-full bg-transparent'
             aria-label='Next slide'
           >
             <ChevronRight className='h-5 w-5' />
@@ -127,27 +88,29 @@ export function ProductSliderSection({
         </div>
       </div>
 
-      {/* Carousel Container */}
-      <div className='overflow-hidden' ref={emblaRef}>
-        <div className='flex gap-[14px]'>
-          {slides.map((slideItems, slideIndex) => (
-            <div
-              key={slideIndex}
-              className='min-w-0 flex-[0_0_auto]'
-              style={{
-                width: `calc((100% - ${(responsiveSlidesPerView - 1) * 16}px) / ${responsiveSlidesPerView})`,
-              }}
-            >
-              <div className={cn('grid gap-4', rows === 2 ? 'grid-rows-2' : 'grid-rows-1')}>
-                {slideItems.map((item, itemIndex) => {
-                  const originalIndex = slideIndex * itemsPerSlide + itemIndex;
-                  return <div key={originalIndex}>{children(item, originalIndex)}</div>;
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Swiper
+        modules={[Navigation, Grid]}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        spaceBetween={spaceBetween}
+        slidesPerView={mobileSlides}
+        slidesPerGroup={1}
+        speed={600}
+        loop={true}
+        grid={{
+          rows: rows,
+          fill: 'row',
+        }}
+        breakpoints={config}
+        className='w-full'
+      >
+        {data.map((item, index) => (
+          <SwiperSlide key={index} className='h-auto'>
+            {children(item, index)}
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }
