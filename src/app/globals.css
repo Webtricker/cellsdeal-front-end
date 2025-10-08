@@ -1033,7 +1033,7 @@ p.bouncing-text {
 }
 
 .home-banner-swiper .swiper-button-prev {
-  @apply left-0 rotate-180 md:left-5;
+  @apply left-0 md:left-5;
 }
 
 .home-banner-swiper .swiper-button-disabled {

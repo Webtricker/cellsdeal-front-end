@@ -11,6 +11,7 @@ export default function ListLayoutProducts() {
                         key={product.id}
                         variant='default'
                         product={product}
+                        className='!max-w-[700px] !w-full'
                         onCompare={() => console.log('Compare:', product.name)}
                         onQuickView={() => console.log('Quick view:', product.name)}
                         onSelectOptions={() => console.log('Select options:', product.name)}

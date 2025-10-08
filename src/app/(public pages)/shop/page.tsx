@@ -3,7 +3,6 @@ import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import PageContent from './components/PageContent'
-import { PriceRangeSlider } from './components/DemoComponent'
 
 export default function ShopPage() {
     return (

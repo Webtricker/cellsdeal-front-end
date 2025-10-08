@@ -1,5 +1,5 @@
 import React from 'react'
-import FilterdProducts from './FilterdProducts'
+import FilteredProducts from './FilteredProducts'
 import { ProductFilter } from './ProductFilter'
 import { FilterSidebarProvider } from '@/provider/FilterSidebarContext'
 
@@ -8,7 +8,7 @@ export default function PageContent() {
         <>
             <FilterSidebarProvider>
                 <ProductFilter />
-                <FilterdProducts />
+                <FilteredProducts />
             </FilterSidebarProvider>
         </>
     )
