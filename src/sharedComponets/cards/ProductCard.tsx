@@ -23,6 +23,7 @@ export interface ProductCardProps {
   onCompare?: () => void;
   onQuickView?: () => void;
   onSelectOptions?: () => void;
+  className?:string;
 }
 
 export function ProductCard({
@@ -31,6 +32,7 @@ export function ProductCard({
   onCompare,
   onQuickView,
   onSelectOptions,
+  className=""
 }: ProductCardProps) {
   const isCompact = variant === 'compact';
 
@@ -40,7 +42,8 @@ export function ProductCard({
         'group relative overflow-hidden p-2',
         isCompact
           ? '!cd_rounded-sm max-w-[140px] border-transparent shadow-none'
-          : 'border-border max-w-[280px] transition-shadow hover:shadow-lg'
+          : 'border-border max-w-[280px] transition-shadow hover:shadow-lg',
+          className
       )}
     >
       <CardContent className='!p-0'>

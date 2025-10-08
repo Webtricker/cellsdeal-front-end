@@ -4,7 +4,8 @@ import { ArticleCard } from '../components/ArticleCard'
 
 export default function TopWeeklyVendors() {
     return (
-        <section className='w-full section-speacing'>
+        
+         <section className='w-full section-bottom-speacing'>
             <Container>
                 <div className='w-full section-heading'>
                     <h2>Top Weekly Vendors</h2>

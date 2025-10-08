@@ -4,7 +4,7 @@ import { ArticleCard } from '../components/ArticleCard'
 
 export default function Articles() {
     return (
-        <section className='w-full section-speacing'>
+         <section className='section-bottom-speacing'>
             <Container>
                 <div className='w-full section-heading'>
                     <h2>Our Articles</h2>

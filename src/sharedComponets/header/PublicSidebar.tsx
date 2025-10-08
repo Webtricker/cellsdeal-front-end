@@ -93,11 +93,14 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
 export default function PublicSidebar() {
     return (
         <Drawer direction="left" >
             <DrawerTrigger asChild>
-                <Menu className='w-5 md:w-6 h-5 md:h-6 lg:hidden' />
+                <Button>
+                    <Menu className='w-5 md:w-6 h-5 md:h-6 lg:hidden' />
+                </Button>
             </DrawerTrigger>
             <DrawerContent>
                 <div className="w-full h-full p-5">

@@ -7,19 +7,21 @@ import Container from '@/sharedComponets/wrapper/Container';
 
 function SalesProducts() {
   return (
-    <Container className='py-8'>
-      <ProductSliderSection title='Sale Products' data={laptopsData} slidesPerView={5} rows={1}>
-        {(product) => (
-          <ProductCard
-            variant='default'
-            product={product}
-            onCompare={() => console.log('Compare:', product.name)}
-            onQuickView={() => console.log('Quick view:', product.name)}
-            onSelectOptions={() => console.log('Select options:', product.name)}
-          />
-        )}
-      </ProductSliderSection>
-    </Container>
+    <section className='w-full section-bottom-speacing'>
+      <Container className=''>
+        <ProductSliderSection title='Sale Products' data={laptopsData} slidesPerView={5} rows={1}>
+          {(product) => (
+            <ProductCard
+              variant='default'
+              product={product}
+              onCompare={() => console.log('Compare:', product.name)}
+              onQuickView={() => console.log('Quick view:', product.name)}
+              onSelectOptions={() => console.log('Select options:', product.name)}
+            />
+          )}
+        </ProductSliderSection>
+      </Container>
+    </section>
   );
 }
 
