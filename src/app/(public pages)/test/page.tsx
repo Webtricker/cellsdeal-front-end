@@ -1,28 +1,18 @@
 "use client"
 import Container from '@/sharedComponets/wrapper/Container';
-import TestSlide from './components/TestSlide';
-
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
-
-// import required modules
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-import Image from 'next/image';
+import Ratings from '@/sharedComponets/cards/Ratings';
 
 export default function TestPage() {
- 
+
   return (
     <>
       <section className='section-speacing'>
         <Container>
           <h1>some content</h1>
+          <Ratings rating={3.5} />
+          <Ratings rating={4.8} size={10} />
+          <Ratings rating={2.3} max={10} />
+
         </Container>
       </section>
     </>

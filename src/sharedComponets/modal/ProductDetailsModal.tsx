@@ -204,9 +204,9 @@ export default function ProductDetailsModal() {
                             <div className="flex items-center gap-2">
                                 <h6 className='cd_fs-sm'>Quantity</h6>
                                 <div className="w-full flex items-center gap-2">
-                                    <Button onClick={() => updateQuantity("increase")} className='cd_fs-md h-6 w-6 !rounded-full leading-[100%]'>+</Button>
-                                    <span>{quantity}</span>
                                     <Button onClick={() => updateQuantity("decrease")} className='cd_fs-md h-6 w-6 !rounded-full leading-[100%]'>-</Button>
+                                    <span>{quantity}</span>
+                                    <Button onClick={() => updateQuantity("increase")} className='cd_fs-md h-6 w-6 !rounded-full leading-[100%]'>+</Button>
                                 </div>
                             </div>
                             <Button className='flex items-center gap-3'>
