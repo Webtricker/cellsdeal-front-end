@@ -69,7 +69,7 @@ export function ProductCard({
 
           <div
             className={cn(
-              'absolute flex gap-2 opacity-0 transition-opacity group-hover:opacity-100',
+              'absolute flex gap-2 lg:opacity-0 transition-opacity group-hover:opacity-100',
               isCompact ? 'top-2 right-2' : 'top-3 right-3'
             )}
           >

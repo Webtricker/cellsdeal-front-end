@@ -12,7 +12,72 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import 'react-inner-image-zoom/lib/styles.min.css';
+import InnerImageZoom from 'react-inner-image-zoom'
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+
+
+
+
+const demoImages = [
+    'https://swiperjs.com/demos/images/nature-1.jpg',
+    'https://swiperjs.com/demos/images/nature-2.jpg',
+    'https://swiperjs.com/demos/images/nature-3.jpg',
+    'https://swiperjs.com/demos/images/nature-4.jpg',
+    'https://swiperjs.com/demos/images/nature-5.jpg',
+    'https://swiperjs.com/demos/images/nature-6.jpg',
+    'https://swiperjs.com/demos/images/nature-7.jpg'
+]
+
+
+const ProductImages = () => {
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    return <div className="w-full relative h-full overflow-hidden flex flex-col">
+        <div className="w-full">
+            <Swiper
+                spaceBetween={10}
+                navigation={true}
+                thumbs={{ swiper: thumbsSwiper }}
+                modules={[FreeMode, Navigation, Thumbs]}
+                className="product-details-swiper w-full"
+            >
+                {
+                    demoImages.map(item => <SwiperSlide key={item}>
+                        <InnerImageZoom zoomType='hover'  className='w-full h-full' src={item} zoomSrc={item} />
+                        {/* <Image width={800} height={400} alt='slider image' className='w-full h-full' src="https://swiperjs.com/demos/images/nature-1.jpg" /> */}
+                    </SwiperSlide>)
+                }
+            </Swiper>
+        </div>
+        <span className='w-full min-h-1.5'></span>
+        <div className="w-full">
+            <Swiper
+                onSwiper={setThumbsSwiper as (() => void) | undefined}
+                spaceBetween={10}
+                slidesPerView={4}
+                freeMode={true}
+                watchSlidesProgress={true}
+                modules={[FreeMode, Navigation, Thumbs]}
+                className="small-view-swiper"
+            >
+                {
+                    demoImages.map(item => <SwiperSlide key={item}>
+                        <Image width={800} height={400} alt='slider image' className='w-full h-full' src={item} />
+                    </SwiperSlide>)
+                }
+            </Swiper>
+        </div>
+    </div>
+}
+
+// ===== root component =====
 export default function ProductDetailsModal() {
     // variables
     const rating = 4;
@@ -28,7 +93,6 @@ export default function ProductDetailsModal() {
     }
 
     const updateQuantity = (action: "increase" | "decrease") => {
-
         if (quantity === 1 && action === "decrease") return
 
         if (action === "increase") {
@@ -52,13 +116,13 @@ export default function ProductDetailsModal() {
             <div onClick={handleClose} className="z-10 bg-black/80 w-full h-full absolute top-0 left-0"></div>
 
             {/* ===== content ===== */}
-            <Card className='relative flex flex-col min-h-[400px] w-full max-w-[850px] p-4 md:p-5 z-20'>
-                <button className='z-50 absolute top-4 right-4' onClick={handleClose}><X className='w-6 h-6 duration-300 hover:scale-110 hover:rotate-90' /></button>
-                <div className="w-full z-40 flex flex-nowrap flex-col md:flex-row gap-8">
-                    <div className='w-full h-full'>
-
+            <Card className='relative flex flex-col min-h-[400px] max-h-[85vh] overflow-hidden w-full max-w-[850px] p-4 md:p-5 z-20'>
+                <button className='z-50 absolute top-4 right-4 bg-slate-300 p-2 lg:p-0 lg:bg-transparent rounded-full' onClick={handleClose}><X className='w-7 h-7 lg:w-6 lg:h-6 duration-300 hover:scale-110 hover:rotate-90' /></button>
+                <div className="w-full z-40 flex flex-nowrap flex-col md:flex-row gap-8 max-w-full overflow-hidden overflow-y-auto">
+                    <div className='w-full md:max-w-3/6 flex flex-col gap-5 lg:gap-6'>
+                        <ProductImages />
                     </div>
-                    <div className='w-full h-full'>
+                    <div className='w-full h-full grow'>
                         <h5 className='font-semibold'>Jeans</h5>
                         <div className="w-full flex items-center gap-4 mt-3">
                             <Image className='border cd_rounded-xs' src="/images/brands/brand-1.png" width={100} height={60} alt="Brand image" />
@@ -150,13 +214,13 @@ export default function ProductDetailsModal() {
                                 <span>ADD TO CART</span>
                             </Button>
                         </div>
-                        <div className="w-full flex items-center gap-5">
+                        <div className="w-full flex items-center gap-5 mt-5 lg:mt-6">
                             <div className='w-full flex items-center gap-5'>
                                 <Facebook size={16} strokeWidth={1.25} />
                                 <Linkedin size={16} strokeWidth={1.25} />
                                 <Twitter size={16} strokeWidth={1.25} />
                             </div>
-                            <div>
+                            <div className='pl-5 lg:pl-10 border-l'>
                                 <Scale className='w-6 h-6' />
                             </div>
                         </div>
