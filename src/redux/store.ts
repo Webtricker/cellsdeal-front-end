@@ -7,11 +7,13 @@ import categories from './features/category/categories';
 import technologies from './features/category/technologies';
 import { postApi } from './features/post/postApi';
 import { subscribeApi } from './features/subscriber/subscribeApiSlice';
+import productActions from './features/productActions/productActions';
 
 export const store = configureStore({
   reducer: {
     categories: categories.reducer,
     technologies: technologies.reducer,
+    productActions:productActions.reducer,
 
     // api slices can be added here
     [contactApi.reducerPath]: contactApi.reducer,

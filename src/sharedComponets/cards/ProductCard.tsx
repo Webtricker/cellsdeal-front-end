@@ -7,6 +7,7 @@ import { Scale, Search, Star } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import useViewProductModal from '@/hooks/useViewProductModal';
 
 export interface ProductCardProps {
   variant?: 'default' | 'compact';
@@ -23,7 +24,7 @@ export interface ProductCardProps {
   onCompare?: () => void;
   onQuickView?: () => void;
   onSelectOptions?: () => void;
-  className?:string;
+  className?: string;
 }
 
 export function ProductCard({
@@ -32,10 +33,14 @@ export function ProductCard({
   onCompare,
   onQuickView,
   onSelectOptions,
-  className=""
+  className = ""
 }: ProductCardProps) {
+  
   const isCompact = variant === 'compact';
 
+  // hooks
+  const {viewProduct}  = useViewProductModal()
+ 
   return (
     <Card
       className={cn(
@@ -43,7 +48,7 @@ export function ProductCard({
         isCompact
           ? '!cd_rounded-sm max-w-[140px] border-transparent shadow-none'
           : 'border-border max-w-[280px] transition-shadow hover:shadow-lg',
-          className
+        className
       )}
     >
       <CardContent className='!p-0'>
@@ -64,7 +69,7 @@ export function ProductCard({
 
           <div
             className={cn(
-              'absolute flex gap-2 opacity-0 transition-opacity group-hover:opacity-100',
+              'absolute flex gap-2 lg:opacity-0 transition-opacity group-hover:opacity-100',
               isCompact ? 'top-2 right-2' : 'top-3 right-3'
             )}
           >
@@ -79,7 +84,7 @@ export function ProductCard({
             )}
             {onQuickView && (
               <button
-                onClick={onQuickView}
+                onClick={()=>viewProduct()} // pass the product.
                 className='bg-background/80 text-muted-foreground hover:bg-background hover:text-foreground flex h-8 w-8 items-center justify-center rounded-full backdrop-blur-sm transition-colors'
                 aria-label='Quick view'
               >
