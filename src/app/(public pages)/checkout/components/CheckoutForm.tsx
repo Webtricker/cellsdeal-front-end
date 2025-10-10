@@ -35,7 +35,6 @@ function CheckoutForm() {
     defaultValues: {
       firstName: '',
       lastName: '',
-      companyName: '',
       streetAddress: '',
       apartment: '',
       city: '',
@@ -101,21 +100,6 @@ function CheckoutForm() {
                 )}
               />
             </div>
-
-            {/* Company Name */}
-            <FormField
-              control={form.control}
-              name='companyName'
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Company name (optional)</FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
 
             {/* Country - Fixed to Bangladesh */}
             <div>
@@ -191,7 +175,7 @@ function CheckoutForm() {
                           <SelectValue placeholder='Select a zilla' />
                         </SelectTrigger>
                       </FormControl>
-                      <SelectContent>
+                      <SelectContent className='!max-h-[500px]'>
                         {bangladeshiZillas.map((zilla) => (
                           <SelectItem key={zilla} value={zilla}>
                             {zilla}
