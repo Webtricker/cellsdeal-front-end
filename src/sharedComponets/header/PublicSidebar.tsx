@@ -42,7 +42,6 @@ export function MenuTabSwitcher() {
                             </Link>
                         </li>
                     </ul>
-
                 </TabsContent>
                 <TabsContent value="category">
                     <ul className="flex flex-col">
@@ -93,11 +92,14 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
 export default function PublicSidebar() {
     return (
         <Drawer direction="left" >
             <DrawerTrigger asChild>
-                <Menu className='w-5 md:w-6 h-5 md:h-6 lg:hidden' />
+                <Button className="lg:hidden">
+                    <Menu className='w-5 md:w-6 h-5 md:h-6' />
+                </Button>
             </DrawerTrigger>
             <DrawerContent>
                 <div className="w-full h-full p-5">

@@ -392,15 +392,15 @@ button {
 }
 
 .section-speacing {
-  @apply py-10 xl:py-12 2xl:py-14;
+  @apply py-12 lg:py-14 xl:py-16 2xl:py-[74px];
 }
 
 .section-top-speacing {
-  @apply pt-10 xl:pt-12 2xl:pt-14;
+  @apply pt-12 lg:pt-14 xl:pt-16 2xl:pt-[74px];
 }
 
 .section-bottom-speacing {
-  @apply pb-10 xl:pb-12 2xl:pb-14;
+  @apply pb-12 lg:pb-14 xl:pb-16 2xl:pb-[74px];
 }
 
 .section-heading {
@@ -1025,15 +1025,15 @@ p.bouncing-text {
 
 .home-banner-swiper .swiper-button-prev,
 .home-banner-swiper .swiper-button-next {
-  @apply absolute top-[50%] z-9999 text-white;
+  @apply absolute top-[50%] z-9999 p-2 text-white;
 }
 
 .home-banner-swiper .swiper-button-next {
-  @apply right-5;
+  @apply right-0 md:right-5;
 }
 
 .home-banner-swiper .swiper-button-prev {
-  @apply left-5 rotate-180;
+  @apply left-0 md:left-5;
 }
 
 .home-banner-swiper .swiper-button-disabled {
@@ -1042,4 +1042,72 @@ p.bouncing-text {
 
 .banner-gradient {
   background-image: linear-gradient(180deg, #0f222b 25%, #223b5f 60%, #5690b1 100%);
+}
+
+.product-filter svg {
+  @apply h-6 w-6;
+}
+
+.site_link {
+  @apply text-blue-600 duration-300 hover:text-blue-500;
+}
+
+/* .product-filter button{
+  padding: 8px 0;
+  margin-top: 12px;
+} */
+
+/* ==== product details view ======= */
+.product-details-swiper {
+  border-radius: 6px !important;
+}
+
+.product-details-swiper .swiper-button-prev,
+.product-details-swiper .swiper-button-next {
+  color: var(--primary) !important;
+  width: 20px;
+}
+
+.product-details-swiper .swiper-button-prev {
+  left: 0;
+}
+
+.product-details-swiper .swiper-button-next {
+  right: 0;
+}
+
+.product-details-swiper .swiper-button-prev svg,
+.product-details-swiper .swiper-button-next svg {
+  width: 25px;
+  height: 25px;
+}
+
+.product-details-swiper {
+}
+
+.small-view-swiper {
+  gap: 6px !important;
+}
+
+.small-view-swiper .swiper-slide {
+  border-radius: 5px !important;
+  margin-right: 6px !important;
+  @apply max-h-full max-w-full overflow-hidden !rounded-md duration-300;
+}
+
+.small-view-swiper .swiper-slide img {
+  border-radius: 5px !important;
+}
+
+.small-view-swiper .swiper-slide-thumb-active {
+  border: 3px solid var(--color-primary);
+  @apply border-2;
+}
+
+.small-view-swiper .swiper-slide img {
+  transition-duration: 0.3s;
+}
+
+.small-view-swiper .swiper-slide-thumb-active img {
+  @apply scale-125;
 }
