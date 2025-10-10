@@ -21,7 +21,7 @@ export default function Ratings({ rating, max = 5, size = 16 }: RatingsProps) {
             {isFull ? (
               <Star
                 className={cn("text-yellow-400 fill-yellow-400")}
-                size={size}
+        size={size}
               />
             ) : isHalf ? (
               <StarHalf
