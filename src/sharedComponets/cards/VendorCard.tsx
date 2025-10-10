@@ -41,7 +41,6 @@ export default function VendorCard() {
                     <Ratings rating={3.5} max={5} />
                 </div>
             </div>
-
         </Card>
     )
 }
