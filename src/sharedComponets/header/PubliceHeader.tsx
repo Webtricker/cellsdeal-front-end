@@ -63,7 +63,7 @@ export default function PubliceHeader() {
           </div>
         </Container>
       </section>
-      <section className='sticky top-0 left-0 z-[99] hidden w-full !bg-[var(--light-primary)] py-2 text-black lg:block'>
+      <section className='sticky top-0 left-0 z-50 hidden w-full !bg-[var(--light-primary)] py-2 text-black lg:block'>
         <Container className='flex items-center justify-between gap-5'>
           <div className='flex items-center gap-5 lg:gap-10'>
             <AllCategories />
