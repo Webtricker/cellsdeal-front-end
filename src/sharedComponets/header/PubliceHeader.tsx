@@ -1,21 +1,15 @@
 import React from 'react';
 import Container from '../wrapper/Container';
 import Link from 'next/link';
-import {
-  ClockFading,
-  Heart,
-  MapPin,
-  MessageCircleMore,
-  PhoneCall,
-  ShoppingCart,
-  UserRound,
-} from 'lucide-react';
+import { ClockFading, Heart, MapPin, MessageCircleMore, PhoneCall, UserRound } from 'lucide-react';
 import SiteLogo from './SiteLogo';
 import SearchFilter from './SearchFilter';
 import { VerticalDivider } from '../utils/Utils';
 import PublicNavlinks from './PublicNavlinks';
 import AllCategories from './AllCategories';
 import PublicSidebar from './PublicSidebar';
+import { CartSheet } from '../cart/CartSheet';
+import { RecentlyViewed } from '../dropdown/RecentlyViewed';
 
 export default function PubliceHeader() {
   return (
@@ -65,13 +59,11 @@ export default function PubliceHeader() {
             <Link href='' className='hidden md:block'>
               <Heart className='h-5 w-5' />
             </Link>
-            <Link href=''>
-              <ShoppingCart className='h-5 w-5' />
-            </Link>
+            <CartSheet />
           </div>
         </Container>
       </section>
-      <section className='sticky top-0 left-0 z-[99] hidden w-full !bg-[var(--light-primary)] py-2 text-black lg:block'>
+      <section className='sticky top-0 left-0 z-50 hidden w-full !bg-[var(--light-primary)] py-2 text-black lg:block'>
         <Container className='flex items-center justify-between gap-5'>
           <div className='flex items-center gap-5 lg:gap-10'>
             <AllCategories />
@@ -82,10 +74,10 @@ export default function PubliceHeader() {
               <MapPin className='h-7 w-7 rounded-full bg-white p-1 text-black' />
               <span className='cd_fs-xs'>Track Order</span>
             </Link>
-            <Link href='' className='flex flex-nowrap items-center gap-2'>
-              <ClockFading className='h-7 w-7 rounded-full bg-white p-1 text-black' />
+            <div className='flex flex-nowrap items-center gap-2'>
+              <RecentlyViewed />
               <span className='cd_fs-xs'>Recently Viewed</span>
-            </Link>
+            </div>
           </div>
         </Container>
       </section>
